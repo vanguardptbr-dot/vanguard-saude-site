@@ -50,12 +50,18 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 
 /* Topo */
 .topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--nevoa)}
-.topo .wrap{display:flex;align-items:center;gap:24px;height:76px}
-.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
-.marca img.sim{width:38px;height:auto}
-.marca .nome{font-family:var(--display);font-weight:700;font-size:22px;color:var(--azul);letter-spacing:.02em;line-height:1}
+.topo .wrap{display:flex;align-items:center;gap:24px;height:96px}
+.marca{display:flex;align-items:center;gap:14px;text-decoration:none}
+.marca img.sim{width:46px;height:auto}
+.marca-topo img.sim{width:58px}
+.marca-topo .nome{font-size:31px}
+.marca-topo .sub{font-size:12.5px;margin-top:6px}
+.marca .divisor{width:1px;height:46px;background:#CBD3E1;margin:0 4px}
+.flags-topo{gap:8px}
+.flags-topo img{width:36px;height:24px;border-radius:4px}
+.marca .nome{font-family:var(--display);font-weight:700;font-size:24px;color:var(--azul);letter-spacing:.02em;line-height:1}
 .marca .nome span{font-size:1.2em}
-.marca .sub{display:block;font-family:"Times New Roman",Georgia,serif;font-weight:700;font-size:9.5px;letter-spacing:.09em;color:var(--marinho);margin-top:4px}
+.marca .sub{display:block;font-family:"Times New Roman",Georgia,serif;font-weight:700;font-size:10.5px;letter-spacing:.09em;color:var(--marinho);margin-top:5px;white-space:nowrap}
 .menu{display:flex;gap:26px;margin-left:auto}
 .menu a{text-decoration:none;font-weight:600;font-size:16px;color:var(--marinho)}
 .menu a:hover{color:var(--azul-vivo)}
@@ -100,6 +106,14 @@ section{padding:96px 0}
 .total b{font-family:var(--display);font-size:40px;color:var(--azul);line-height:1}
 .total span{font-weight:600;color:var(--marinho)}
 
+.passo .img.plataforma{background:var(--marinho);color:#fff;padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.pl-topo{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;color:#BFD0EA;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:12px}
+.pl-topo span:first-child{color:#fff}
+.plataforma ul{list-style:none;display:grid;gap:9px}
+.plataforma li{display:flex;justify-content:space-between;gap:12px;font-size:15px;align-items:baseline}
+.plataforma li b{font-weight:600}
+.plataforma li i{font-style:normal;font-variant-numeric:tabular-nums;color:#9FC0F0;font-weight:700}
+
 /* Cursos */
 .cursos{background:var(--creme)}
 .grade-cursos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -108,10 +122,15 @@ section{padding:96px 0}
 .curso .img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .curso .corpo{flex:1}
 .curso a{margin-top:auto!important;padding-top:6px}
-.curso .corpo{padding:26px 26px 28px;display:flex;flex-direction:column;gap:10px}
+.curso .corpo{padding:34px 30px 32px;display:flex;flex-direction:column;gap:12px;border-top:6px solid var(--azul-vivo)}
+.curso.destaque .corpo{background:var(--azul);color:#DCE6F5;border-top-color:#9FC0F0}
+.curso.destaque h3,.curso.destaque .horas-grande{color:#fff}
+.curso.destaque a{color:#fff}
+.horas-grande{font-family:var(--display);font-weight:800;font-size:64px;line-height:.9;color:var(--azul);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.horas-grande small{font-size:18px;font-weight:600;letter-spacing:0;margin-left:8px}
 .curso .meta{display:flex;flex-wrap:wrap;gap:8px}
 .curso .meta span{font-size:14px;font-weight:600;background:var(--nevoa);color:var(--azul);padding:4px 12px;border-radius:999px}
-.curso.destaque .meta span{background:var(--azul);color:#fff}
+.curso.destaque .meta span{background:rgba(255,255,255,.14);color:#fff}
 .curso p{font-size:17px}
 .curso a{margin-top:6px;font-weight:700;color:var(--azul);text-decoration:none}
 .curso a:hover{text-decoration:underline;text-underline-offset:4px}
@@ -127,13 +146,13 @@ section{padding:96px 0}
 .galeria .g1{grid-column:span 2;grid-row:span 2}
 .galeria .g4{grid-row:span 2}
 .galeria .g7{grid-column:span 2}
-.galeria .g1 img{object-position:center 18%}
+
 .selo-real{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--azul);background:var(--nevoa);padding:6px 14px;border-radius:999px;width:fit-content}
 .selo-real::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--verde-wa)}
 
 /* Idioma */
 .idioma-bloco .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.idioma-bloco .img{border-radius:var(--raio);overflow:hidden;aspect-ratio:4/5;max-height:620px}
+.idioma-bloco .img{border-radius:var(--raio);overflow:hidden;aspect-ratio:5/4}
 .idioma-bloco .img img{width:100%;height:100%;object-fit:cover}
 .duas{display:grid;gap:18px;margin-top:30px}
 .dupla{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:var(--raio);background:var(--nevoa)}
@@ -146,7 +165,7 @@ section{padding:96px 0}
 .carreira .texto{padding:88px 56px 88px max(24px,calc((100vw - var(--max))/2 + 24px));display:flex;flex-direction:column;gap:20px;justify-content:center}
 .carreira h2{color:#fff}
 .carreira p{color:#DCE6F5;max-width:52ch}
-.carreira .img{min-height:420px;background:url(assets/formatura.jpg) center/cover}
+.carreira .img{min-height:460px;background:url(assets/real-formandos.jpg) center 22%/cover}
 
 /* Dúvidas */
 .faq{max-width:860px}
@@ -229,7 +248,12 @@ footer details p{margin-top:10px;max-width:90ch}
   .hero .foto::after{background:linear-gradient(180deg,rgba(245,243,238,0) 60%,var(--creme) 100%)}
   .hero .wrap{padding-top:28px;padding-bottom:64px}
   .topo .btn span{display:none}
-  .marca .sub{display:none}
+  .marca-topo img.sim{width:42px}
+  .marca-topo .nome{font-size:23px}
+  .marca-topo .sub{font-size:9.5px}
+  .marca .divisor{display:none}
+  .flags-topo img{width:28px;height:19px}
+  .topo .wrap{height:76px}
   .form .linha{grid-template-columns:1fr}
   .form{padding:24px}
 }
@@ -240,13 +264,14 @@ footer details p{margin-top:10px;max-width:90ch}
 
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="#inicio" aria-label="Vanguard School of Professional Health, início">
+    <a class="marca marca-topo" href="#inicio" aria-label="Vanguard School of Professional Health, início">
       <img class="sim" src="assets/simbolo-azul.svg" alt="">
-      <div>
+      <div class="palavras">
         <div class="nome"><span>V</span>ANGUARD</div>
         <span class="sub">SCHOOL OF PROFESSIONAL HEALTH</span>
       </div>
-      <span class="flags" aria-label="Brasil e Estados Unidos"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>
+      <span class="divisor" aria-hidden="true"></span>
+      <span class="flags flags-topo" aria-label="Atendimento em português, aulas em inglês"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>
     </a>
     <nav class="menu" aria-label="Seções">
       <a href="#como-funciona">Como funciona</a>
@@ -301,7 +326,17 @@ footer details p{margin-top:10px;max-width:90ch}
     </div>
     <div class="passos">
       <article class="passo revela">
-        <div class="img"><img src="assets/online.jpg" alt="Aluna estudando à noite no notebook" loading="lazy"></div>
+        <div class="img plataforma" aria-label="Exemplo dos módulos teóricos do curso">
+          <div class="pl-topo"><span>Plataforma online</span><span>Técnico em Hemodiálise</span></div>
+          <ul>
+            <li><b>Princípios da hemodiálise</b><i>65 h</i></li>
+            <li><b>Anatomia renal e insuficiência renal</b><i>80 h</i></li>
+            <li><b>Efeitos sistêmicos</b><i>35 h</i></li>
+            <li><b>Controle de infecção</b><i>20 h</i></li>
+            <li><b>Acessos para hemodiálise</b><i>20 h</i></li>
+            <li><b>Medicamentos e seus efeitos</b><i>20 h</i></li>
+          </ul>
+        </div>
         <span class="num">PASSO 1</span>
         <h3>Teoria online</h3>
         <p>Você estuda a parte teórica pela plataforma da escola, no seu ritmo, com acompanhamento dos instrutores.</p>
@@ -334,28 +369,31 @@ footer details p{margin-top:10px;max-width:90ch}
     </div>
     <div class="grade-cursos">
       <article class="curso destaque revela">
-        <div class="img"><img src="assets/retrato.jpg" alt="Técnica em hemodiálise sorrindo no laboratório" loading="lazy"></div>
+        
         <div class="corpo">
-          <div class="meta"><span>600 horas</span><span>Teoria online + campus</span></div>
+          <div class="horas-grande">600<small>horas</small></div>
           <h3>Técnico em Hemodiálise</h3>
+          <div class="meta"><span>Teoria online + campus</span><span>Estágio em clínica</span></div>
           <p>Hemodialysis Technician. Prepara você para atuar em clínicas de diálise e para as provas nacionais de certificação.</p>
           <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Técnico em Hemodiálise.">Quero saber mais</a>
         </div>
       </article>
       <article class="curso revela">
-        <div class="img"><img src="assets/pct.jpg" alt="Técnico medindo a pressão de uma paciente idosa" loading="lazy"></div>
+        
         <div class="corpo">
-          <div class="meta"><span>600 horas</span><span>Presencial</span></div>
+          <div class="horas-grande">600<small>horas</small></div>
           <h3>Técnico de Cuidados ao Paciente</h3>
+          <div class="meta"><span>Presencial</span><span>EKG e flebotomia</span></div>
           <p>Patient Care Technician. Formação ampla para hospitais e clínicas, com EKG, flebotomia e cuidados de enfermagem.</p>
           <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Patient Care Technician.">Quero saber mais</a>
         </div>
       </article>
       <article class="curso revela">
-        <div class="img"><img src="assets/hha.jpg" alt="Cuidadora ajudando um idoso a caminhar em casa" loading="lazy"></div>
+        
         <div class="corpo">
-          <div class="meta"><span>75 horas</span><span>Presencial</span></div>
+          <div class="horas-grande">75<small>horas</small></div>
           <h3>Cuidador Domiciliar</h3>
+          <div class="meta"><span>Presencial</span><span>Curso rápido</span></div>
           <p>Home Health Aide. Curso rápido para quem quer trabalhar com cuidados de pacientes em casa.</p>
           <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Home Health Aide.">Quero saber mais</a>
         </div>
@@ -372,20 +410,17 @@ footer details p{margin-top:10px;max-width:90ch}
       <span class="selo-real">Fotos reais da escola</span>
     </div>
     <div class="galeria">
-      <figure class="g1 revela"><div class="ft"><img src="assets/real-fachada.jpg" alt="Fachada da Vanguard School of Professional Health, Suite 101, com o selo BONENT Approved Training Program" loading="lazy"></div><figcaption>Nossa fachada, na Suite 101</figcaption></figure>
-      <figure class="revela"><div class="ft"><img src="assets/real-lab.jpg" alt="Laboratório com máquinas de hemodiálise" loading="lazy"></div><figcaption>Laboratório de hemodiálise</figcaption></figure>
-      <figure class="g4 revela"><div class="ft"><img src="assets/real-formandos.jpg" alt="Formandos da Vanguard com seus certificados" loading="lazy" style="object-position:center 30%"></div><figcaption>Dia de formatura</figcaption></figure>
+      <figure class="g1 revela"><div class="ft"><img src="assets/real-diretora.jpg" alt="Diretora da escola recebendo a turma em sala de aula" loading="lazy" style="object-position:center 35%"></div><figcaption>Boas-vindas à turma</figcaption></figure>
       <figure class="revela"><div class="ft"><img src="assets/real-sala.jpg" alt="Sala de aula com carteiras e equipamento de diálise" loading="lazy"></div><figcaption>Sala de aula</figcaption></figure>
       <figure class="revela"><div class="ft"><img src="assets/real-demo.jpg" alt="Instrutor demonstrando uma linha de diálise para os alunos" loading="lazy"></div><figcaption>Aula prática com instrutor</figcaption></figure>
-      <figure class="revela"><div class="ft"><img src="assets/real-turma.jpg" alt="Turma reunida em atividade sobre acessos para diálise" loading="lazy"></div><figcaption>Turma em atividade</figcaption></figure>
-      <figure class="g7 revela"><div class="ft"><img src="assets/real-diretora.jpg" alt="Diretora da escola apresentando para a turma" loading="lazy" style="object-position:center 35%"></div><figcaption>Boas-vindas à turma</figcaption></figure>
+      <figure class="g7 revela"><div class="ft"><img src="assets/real-turma.jpg" alt="Turma reunida em atividade sobre acessos para diálise" loading="lazy" style="object-position:center 40%"></div><figcaption>Turma em atividade</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section class="idioma-bloco">
   <div class="wrap">
-    <div class="img revela"><img src="assets/atendimento.jpg" alt="Atendente sorrindo com fone de ouvido na recepção" loading="lazy"></div>
+    <div class="img revela"><img src="assets/real-fachada.jpg" alt="Fachada da Vanguard School of Professional Health na Suite 101, em Lauderhill, com o selo BONENT Approved Training Program" loading="lazy" style="object-position:center 30%"></div>
     <div class="revela">
       <span class="eyebrow">Por que Vanguard Saúde</span>
       <h2>Uma escola americana que fala a sua língua</h2>
@@ -406,7 +441,7 @@ footer details p{margin-top:10px;max-width:90ch}
       <p>Ao concluir o programa, você recebe o diploma da escola e pode se inscrever nas provas nacionais de certificação em hemodiálise, como a CCHT (NNCC) e a CHT (BONENT), conforme os requisitos de cada banca.</p>
       <div><a class="btn btn-claro js-wa" href="#contato" data-msg="Olá! Quero começar minha carreira na área da saúde.">Quero começar</a></div>
     </div>
-    <div class="img" role="img" aria-label="Formandos sorrindo com seus certificados"></div>
+    <div class="img" role="img" aria-label="Formatura real de uma turma da Vanguard, com a diretora e os alunos segurando seus certificados"></div>
   </div>
 </section>
 
