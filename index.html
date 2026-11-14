@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanguard Saúde</title>
+<meta name="description" content="Técnico em Hemodiálise nos EUA na Vanguard School of Professional Health, escola licenciada na Flórida. Aulas em inglês, atendimento em português.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout: faixas horizontais alternando claro e azul profundo; foto real em cada bloco; uma única ação principal (WhatsApp) */
+  --azul:#1D4E8F;
+  --azul-vivo:#2D6CB9;
+  --marinho:#0D1B3E;
+  --creme:#F5F3EE;
+  --nevoa:#E8EDF5;
+  --texto:#24304A;
+  --verde-wa:#1F8F4E;
+  --display:"Poppins",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --raio:14px;
+  --max:1180px;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--texto);background:#fff;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azul-vivo);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);color:var(--marinho);line-height:1.12;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(30px,4vw,44px);font-weight:700}
+h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--azul-vivo)}
+.lead{font-size:20px;max-width:62ch}
+.flags{display:inline-flex;gap:6px;vertical-align:middle}
+.flags img{width:30px;height:20px;border-radius:3px;box-shadow:0 0 0 1px rgba(13,27,62,.12)}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:700;font-size:17px;text-decoration:none;border-radius:999px;padding:15px 26px;border:0;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--verde-wa);color:#fff}
+.btn-wa:hover{background:#18763f}
+.btn-claro{background:#fff;color:var(--marinho)}
+.btn-link{background:transparent;color:var(--azul);padding:15px 6px;text-decoration:underline;text-underline-offset:4px}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Topo */
+.topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--nevoa)}
+.topo .wrap{display:flex;align-items:center;gap:24px;height:76px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca img.sim{width:38px;height:auto}
+.marca .nome{font-family:var(--display);font-weight:700;font-size:22px;color:var(--azul);letter-spacing:.02em;line-height:1}
+.marca .nome span{font-size:1.2em}
+.marca .sub{display:block;font-family:"Times New Roman",Georgia,serif;font-weight:700;font-size:9.5px;letter-spacing:.09em;color:var(--marinho);margin-top:4px}
+.menu{display:flex;gap:26px;margin-left:auto}
+.menu a{text-decoration:none;font-weight:600;font-size:16px;color:var(--marinho)}
+.menu a:hover{color:var(--azul-vivo)}
+.topo .btn{padding:11px 20px;font-size:15px}
+
+/* Abertura */
+.hero{position:relative;background:var(--creme);overflow:hidden}
+.hero .foto{position:absolute;inset:0 0 0 38%;background:url(assets/capa.jpg) 70% center/cover no-repeat}
+.hero .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--creme) 0%,rgba(245,243,238,.85) 22%,rgba(245,243,238,0) 55%)}
+.hero .wrap{position:relative;padding-top:88px;padding-bottom:96px}
+.hero .conteudo{max-width:560px}
+.selo-idioma{display:inline-flex;align-items:center;gap:12px;background:#fff;border-radius:999px;padding:8px 18px 8px 10px;font-weight:600;font-size:16px;color:var(--marinho);box-shadow:0 2px 10px rgba(13,27,62,.08)}
+.hero h1{font-size:clamp(40px,5.4vw,64px);font-weight:800;margin-top:26px}
+.hero h1 em{font-style:normal;color:var(--azul)}
+.hero .lead{margin-top:22px;color:var(--texto)}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .idioma{margin-top:34px;font-weight:700;font-size:18px;color:var(--marinho);display:flex;flex-wrap:wrap;gap:6px 18px}
+.hero .idioma span{display:inline-flex;align-items:center;gap:8px}
+.hero .idioma img{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(13,27,62,.12)}
+
+/* Faixa de confiança */
+.confianca{background:var(--marinho);color:#fff}
+.confianca ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.confianca li{padding:30px 24px;border-left:1px solid rgba(255,255,255,.14)}
+.confianca li:first-child{border-left:0}
+.confianca strong{display:block;font-family:var(--display);font-size:19px;font-weight:700;line-height:1.25}
+.confianca small{display:block;font-size:15px;color:#BFD0EA;margin-top:6px;line-height:1.4}
+
+/* Seções */
+section{padding:96px 0}
+.cab{display:flex;flex-direction:column;gap:14px;margin-bottom:48px;max-width:760px}
+
+/* Como funciona */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:passo}
+.passo{display:flex;flex-direction:column;gap:18px}
+.passo .img{aspect-ratio:4/3;border-radius:var(--raio);overflow:hidden;background:var(--nevoa)}
+.passo .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.passo:hover .img img{transform:scale(1.04)}
+.passo .num{font-family:var(--display);font-weight:800;color:var(--azul-vivo);font-size:15px;letter-spacing:.06em}
+.passo .horas{font-variant-numeric:tabular-nums;font-weight:700;color:var(--azul)}
+.total{margin-top:44px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 28px;padding:28px 32px;background:var(--nevoa);border-radius:var(--raio)}
+.total b{font-family:var(--display);font-size:40px;color:var(--azul);line-height:1}
+.total span{font-weight:600;color:var(--marinho)}
+
+/* Cursos */
+.cursos{background:var(--creme)}
+.grade-cursos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.curso{background:#fff;border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(13,27,62,.06)}
+.curso .img{aspect-ratio:4/3;overflow:hidden}
+.curso .img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.curso .corpo{flex:1}
+.curso a{margin-top:auto!important;padding-top:6px}
+.curso .corpo{padding:26px 26px 28px;display:flex;flex-direction:column;gap:10px}
+.curso .meta{display:flex;flex-wrap:wrap;gap:8px}
+.curso .meta span{font-size:14px;font-weight:600;background:var(--nevoa);color:var(--azul);padding:4px 12px;border-radius:999px}
+.curso.destaque .meta span{background:var(--azul);color:#fff}
+.curso p{font-size:17px}
+.curso a{margin-top:6px;font-weight:700;color:var(--azul);text-decoration:none}
+.curso a:hover{text-decoration:underline;text-underline-offset:4px}
+
+
+/* Escola por dentro: fotos reais */
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+.galeria figure{margin:0;display:flex;flex-direction:column;gap:8px;min-height:0}
+.galeria figure .ft{flex:1;min-height:0;border-radius:var(--raio);overflow:hidden;background:var(--nevoa)}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.galeria figure:hover img{transform:scale(1.04)}
+.galeria figcaption{font-size:15px;font-weight:600;color:var(--marinho)}
+.galeria .g1{grid-column:span 2;grid-row:span 2}
+.galeria .g4{grid-row:span 2}
+.galeria .g7{grid-column:span 2}
+.galeria .g1 img{object-position:center 18%}
+.selo-real{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--azul);background:var(--nevoa);padding:6px 14px;border-radius:999px;width:fit-content}
+.selo-real::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--verde-wa)}
+
+/* Idioma */
+.idioma-bloco .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.idioma-bloco .img{border-radius:var(--raio);overflow:hidden;aspect-ratio:4/5;max-height:620px}
+.idioma-bloco .img img{width:100%;height:100%;object-fit:cover}
+.duas{display:grid;gap:18px;margin-top:30px}
+.dupla{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:var(--raio);background:var(--nevoa)}
+.dupla img{width:42px;height:28px;border-radius:4px;flex:none;margin-top:4px;box-shadow:0 0 0 1px rgba(13,27,62,.12)}
+.dupla b{display:block;font-family:var(--display);color:var(--marinho);font-size:19px}
+
+/* Faixa de carreira */
+.carreira{position:relative;padding:0;color:#fff;background:var(--azul)}
+.carreira .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:stretch;padding:0;max-width:none}
+.carreira .texto{padding:88px 56px 88px max(24px,calc((100vw - var(--max))/2 + 24px));display:flex;flex-direction:column;gap:20px;justify-content:center}
+.carreira h2{color:#fff}
+.carreira p{color:#DCE6F5;max-width:52ch}
+.carreira .img{min-height:420px;background:url(assets/formatura.jpg) center/cover}
+
+/* Dúvidas */
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid #D9DFEA}
+.faq summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;position:relative;font-family:var(--display);font-weight:600;font-size:20px;color:var(--marinho)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:2.5px solid var(--azul);border-bottom:2.5px solid var(--azul);transform:translateY(-70%) rotate(45deg);transition:transform .25s ease}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 0 24px;max-width:70ch}
+
+/* Contato */
+.contato{background:var(--creme)}
+.contato .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.form{background:#fff;border-radius:var(--raio);padding:36px;display:grid;gap:18px;box-shadow:0 1px 3px rgba(13,27,62,.06)}
+.form label{display:grid;gap:6px;font-weight:600;font-size:16px;color:var(--marinho)}
+.form input,.form select{font:inherit;font-size:17px;padding:13px 14px;border:1.5px solid #CBD3E1;border-radius:10px;background:#fff;color:var(--texto)}
+.form input:focus,.form select:focus{border-color:var(--azul-vivo);outline:none;box-shadow:0 0 0 3px rgba(45,108,185,.18)}
+.form .linha{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .aviso{font-size:14px;color:#5B6680}
+.form .ok{display:none;background:var(--nevoa);padding:16px;border-radius:10px;font-weight:600;color:var(--marinho)}
+.info{display:grid;gap:22px}
+.info .bloco{display:grid;gap:4px}
+.info .bloco b{font-family:var(--display);color:var(--marinho);font-size:18px}
+.info a{color:var(--azul);font-weight:600}
+.oficial{display:flex;gap:18px;align-items:center;padding:22px;border-radius:var(--raio);background:#fff;text-decoration:none;box-shadow:0 1px 3px rgba(13,27,62,.06)}
+.oficial img{width:48px}
+.oficial b{display:block;font-family:var(--display);color:var(--marinho)}
+.oficial span{font-size:15px;color:#5B6680}
+
+/* Rodapé */
+footer{background:var(--marinho);color:#BFD0EA;padding:64px 0 40px;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+footer .marca .nome{color:#fff}
+footer .marca .sub{color:#BFD0EA}
+footer h4{font-family:var(--display);color:#fff;font-size:16px;margin-bottom:10px}
+footer a{color:#fff}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:24px;display:grid;gap:12px;font-size:14px}
+footer details summary{cursor:pointer;color:#fff;font-weight:600}
+footer details p{margin-top:10px;max-width:90ch}
+
+/* WhatsApp flutuante */
+.wa-flutuante{position:fixed;right:20px;bottom:20px;z-index:30;width:60px;height:60px;border-radius:50%;background:var(--verde-wa);display:grid;place-items:center;box-shadow:0 6px 20px rgba(13,27,62,.25)}
+.wa-flutuante svg{width:30px;height:30px}
+
+/* Movimento suave na entrada (sempre visível) */
+@media (prefers-reduced-motion:no-preference){
+  .hero .conteudo>*{animation:sobe .7s ease both}
+  .hero .conteudo>*:nth-child(2){animation-delay:.08s}
+  .hero .conteudo>*:nth-child(3){animation-delay:.16s}
+  .hero .conteudo>*:nth-child(4){animation-delay:.24s}
+  .hero .conteudo>*:nth-child(5){animation-delay:.32s}
+  .hero .foto{animation:zoom 1.6s ease both}
+  .revela{transition:transform .7s ease}
+  .revela.fora{transform:translateY(28px)}
+}
+@keyframes sobe{from{transform:translateY(18px)}to{transform:none}}
+@keyframes zoom{from{transform:scale(1.06)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* Celular */
+@media (max-width:980px){
+  .menu{display:none}
+  .confianca ul{grid-template-columns:1fr 1fr}
+  .confianca li:nth-child(3){border-left:0}
+  .confianca li{border-top:1px solid rgba(255,255,255,.14)}
+  .passos,.grade-cursos{grid-template-columns:1fr}
+  .idioma-bloco .wrap,.contato .wrap,.carreira .wrap{grid-template-columns:1fr;gap:40px}
+  .carreira .texto{padding:64px 24px}
+  .carreira .img{min-height:300px}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .galeria .g1{grid-column:span 2;grid-row:span 2}
+  .galeria .g4{grid-row:span 1}
+  .galeria .g7{grid-column:span 2}
+  body{font-size:17px}
+  section{padding:68px 0}
+  .hero .foto{position:relative;inset:auto;height:300px;background-position:72% center}
+  .hero .foto::after{background:linear-gradient(180deg,rgba(245,243,238,0) 60%,var(--creme) 100%)}
+  .hero .wrap{padding-top:28px;padding-bottom:64px}
+  .topo .btn span{display:none}
+  .marca .sub{display:none}
+  .form .linha{grid-template-columns:1fr}
+  .form{padding:24px}
+}
+@media (max-width:440px){.confianca ul{grid-template-columns:1fr}.confianca li{border-left:0}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Vanguard School of Professional Health, início">
+      <img class="sim" src="assets/simbolo-azul.svg" alt="">
+      <div>
+        <div class="nome"><span>V</span>ANGUARD</div>
+        <span class="sub">SCHOOL OF PROFESSIONAL HEALTH</span>
+      </div>
+      <span class="flags" aria-label="Brasil e Estados Unidos"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#escola">A escola</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-wa js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre os cursos da Vanguard.">
+      <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero" style="padding:0">
+  <div class="foto" role="img" aria-label="Técnica em hemodiálise ajustando a máquina ao lado de um paciente"></div>
+  <div class="wrap">
+    <div class="conteudo">
+      <span class="selo-idioma"><span class="flags"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>Atendimento em português</span>
+      <h1>Técnico em Hemodiálise <em>nos Estados Unidos.</em></h1>
+      <p class="lead">Formação americana de 600 horas na Vanguard School of Professional Health, escola licenciada em Lauderhill, na Flórida. Teoria online, prática no campus e estágio em clínica de diálise.</p>
+      <div class="acoes">
+        <a class="btn btn-wa js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Técnico em Hemodiálise.">
+          <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          Falar com a gente no WhatsApp
+        </a>
+        <a class="btn btn-link" href="#cursos">Ver os cursos</a>
+      </div>
+      <p class="idioma"><span><img src="assets/flag-us.svg" alt="">Aulas em inglês</span><span><img src="assets/flag-br.svg" alt="">Atendimento em português</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="confianca" role="region" aria-label="Credenciais da escola">
+  <ul class="wrap">
+    <li><strong>Licenciada na Flórida</strong><small>Commission for Independent Education, Florida Department of Education</small></li>
+    <li><strong>BONENT Approved Training Program</strong><small>Programa de hemodiálise aprovado pelo BONENT</small></li>
+    <li><strong>Clínicas de diálise parceiras</strong><small>Estágio supervisionado em clínicas da região</small></li>
+    <li><strong>Desde 2016 em Lauderhill</strong><small>7100 W Commercial Blvd, Suite 101</small></li>
+  </ul>
+</div>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do estudo em casa à prática numa clínica de diálise</h2>
+      <p class="lead">O curso de Técnico em Hemodiálise combina estudo online com aulas práticas no campus e estágio supervisionado.</p>
+    </div>
+    <div class="passos">
+      <article class="passo revela">
+        <div class="img"><img src="assets/online.jpg" alt="Aluna estudando à noite no notebook" loading="lazy"></div>
+        <span class="num">PASSO 1</span>
+        <h3>Teoria online</h3>
+        <p>Você estuda a parte teórica pela plataforma da escola, no seu ritmo, com acompanhamento dos instrutores.</p>
+        <p class="horas">350 horas de teoria</p>
+      </article>
+      <article class="passo revela">
+        <div class="img"><img src="assets/real-lab.jpg" alt="Máquinas de hemodiálise no laboratório da Vanguard em Lauderhill" loading="lazy"></div>
+        <span class="num">PASSO 2</span>
+        <h3>Prática no campus</h3>
+        <p>No laboratório em Lauderhill, você aprende a operar a máquina, o tratamento da água e o monitoramento do paciente.</p>
+        <p class="horas">130 horas de laboratório</p>
+      </article>
+      <article class="passo revela">
+        <div class="img"><img src="assets/linhas.jpg" alt="Mãos com luvas azuis ajustando as linhas da máquina de diálise" loading="lazy"></div>
+        <span class="num">PASSO 3</span>
+        <h3>Estágio em clínica</h3>
+        <p>A etapa final é feita numa clínica de diálise parceira, ao lado de profissionais certificados.</p>
+        <p class="horas">120 horas de estágio</p>
+      </article>
+    </div>
+    <div class="total revela"><b>600 horas</b><span>cerca de 30 semanas no período integral</span><span>turmas diurnas, noturnas e de fim de semana</span></div>
+  </div>
+</section>
+
+<section class="cursos" id="cursos">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="eyebrow">Cursos</span>
+      <h2>Escolha a sua formação na área da saúde</h2>
+    </div>
+    <div class="grade-cursos">
+      <article class="curso destaque revela">
+        <div class="img"><img src="assets/retrato.jpg" alt="Técnica em hemodiálise sorrindo no laboratório" loading="lazy"></div>
+        <div class="corpo">
+          <div class="meta"><span>600 horas</span><span>Teoria online + campus</span></div>
+          <h3>Técnico em Hemodiálise</h3>
+          <p>Hemodialysis Technician. Prepara você para atuar em clínicas de diálise e para as provas nacionais de certificação.</p>
+          <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Técnico em Hemodiálise.">Quero saber mais</a>
+        </div>
+      </article>
+      <article class="curso revela">
+        <div class="img"><img src="assets/pct.jpg" alt="Técnico medindo a pressão de uma paciente idosa" loading="lazy"></div>
+        <div class="corpo">
+          <div class="meta"><span>600 horas</span><span>Presencial</span></div>
+          <h3>Técnico de Cuidados ao Paciente</h3>
+          <p>Patient Care Technician. Formação ampla para hospitais e clínicas, com EKG, flebotomia e cuidados de enfermagem.</p>
+          <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Patient Care Technician.">Quero saber mais</a>
+        </div>
+      </article>
+      <article class="curso revela">
+        <div class="img"><img src="assets/hha.jpg" alt="Cuidadora ajudando um idoso a caminhar em casa" loading="lazy"></div>
+        <div class="corpo">
+          <div class="meta"><span>75 horas</span><span>Presencial</span></div>
+          <h3>Cuidador Domiciliar</h3>
+          <p>Home Health Aide. Curso rápido para quem quer trabalhar com cuidados de pacientes em casa.</p>
+          <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Home Health Aide.">Quero saber mais</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="escola">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="eyebrow">A escola por dentro</span>
+      <h2>Conheça o campus da Vanguard em Lauderhill</h2>
+      <span class="selo-real">Fotos reais da escola</span>
+    </div>
+    <div class="galeria">
+      <figure class="g1 revela"><div class="ft"><img src="assets/real-fachada.jpg" alt="Fachada da Vanguard School of Professional Health, Suite 101, com o selo BONENT Approved Training Program" loading="lazy"></div><figcaption>Nossa fachada, na Suite 101</figcaption></figure>
+      <figure class="revela"><div class="ft"><img src="assets/real-lab.jpg" alt="Laboratório com máquinas de hemodiálise" loading="lazy"></div><figcaption>Laboratório de hemodiálise</figcaption></figure>
+      <figure class="g4 revela"><div class="ft"><img src="assets/real-formandos.jpg" alt="Formandos da Vanguard com seus certificados" loading="lazy" style="object-position:center 30%"></div><figcaption>Dia de formatura</figcaption></figure>
+      <figure class="revela"><div class="ft"><img src="assets/real-sala.jpg" alt="Sala de aula com carteiras e equipamento de diálise" loading="lazy"></div><figcaption>Sala de aula</figcaption></figure>
+      <figure class="revela"><div class="ft"><img src="assets/real-demo.jpg" alt="Instrutor demonstrando uma linha de diálise para os alunos" loading="lazy"></div><figcaption>Aula prática com instrutor</figcaption></figure>
+      <figure class="revela"><div class="ft"><img src="assets/real-turma.jpg" alt="Turma reunida em atividade sobre acessos para diálise" loading="lazy"></div><figcaption>Turma em atividade</figcaption></figure>
+      <figure class="g7 revela"><div class="ft"><img src="assets/real-diretora.jpg" alt="Diretora da escola apresentando para a turma" loading="lazy" style="object-position:center 35%"></div><figcaption>Boas-vindas à turma</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="idioma-bloco">
+  <div class="wrap">
+    <div class="img revela"><img src="assets/atendimento.jpg" alt="Atendente sorrindo com fone de ouvido na recepção" loading="lazy"></div>
+    <div class="revela">
+      <span class="eyebrow">Por que Vanguard Saúde</span>
+      <h2>Uma escola americana que fala a sua língua</h2>
+      <p class="lead" style="margin-top:18px">A Vanguard Saúde é o atendimento em português da Vanguard School of Professional Health. Mesma escola, mesmo campus, mesmos instrutores.</p>
+      <div class="duas">
+        <div class="dupla"><img src="assets/flag-br.svg" alt=""><div><b>Atendimento em português</b>Tire suas dúvidas, entenda a matrícula e os documentos no seu idioma, pelo WhatsApp ou pelo Instagram.</div></div>
+        <div class="dupla"><img src="assets/flag-us.svg" alt=""><div><b>Aulas em inglês</b>As aulas, o material e as provas são em inglês, como em qualquer escola técnica americana.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="carreira">
+  <div class="wrap">
+    <div class="texto revela">
+      <span class="eyebrow" style="color:#BFD0EA">Sua carreira nos EUA</span>
+      <h2>Onde o conhecimento vira carreira nos Estados Unidos</h2>
+      <p>Ao concluir o programa, você recebe o diploma da escola e pode se inscrever nas provas nacionais de certificação em hemodiálise, como a CCHT (NNCC) e a CHT (BONENT), conforme os requisitos de cada banca.</p>
+      <div><a class="btn btn-claro js-wa" href="#contato" data-msg="Olá! Quero começar minha carreira na área da saúde.">Quero começar</a></div>
+    </div>
+    <div class="img" role="img" aria-label="Formandos sorrindo com seus certificados"></div>
+  </div>
+</section>
+
+<section id="duvidas">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>O que os brasileiros mais perguntam</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Preciso falar inglês?</summary><p>Sim. As aulas, o material e as provas são em inglês. O atendimento em português ajuda você em tudo o que vem antes: informações, matrícula e documentos.</p></details>
+      <details><summary>Quem pode se matricular?</summary><p>Maiores de 18 anos, com documento com foto e ensino médio completo (ou equivalente). Toda matrícula é formalizada por um contrato de matrícula com a escola.</p></details>
+      <details><summary>Meu diploma de ensino médio é do Brasil. Ele vale?</summary><p>Vale, desde que seja traduzido e avaliado por um serviço reconhecido nos EUA. A gente explica o passo a passo no atendimento.</p></details>
+      <details><summary>Dá para fazer parte do curso online?</summary><p>Sim. No curso de Técnico em Hemodiálise, a teoria é online. As aulas práticas acontecem no campus em Lauderhill e o estágio, numa clínica de diálise parceira na Flórida.</p></details>
+      <details><summary>Quais são os horários?</summary><p>Há turmas diurnas, noturnas e de fim de semana. Pergunte no WhatsApp as datas da próxima turma.</p></details>
+      <details><summary>A escola garante emprego?</summary><p>Nenhuma escola séria garante emprego. A Vanguard oferece apoio de carreira: preparação de currículo, orientação para entrevistas e contato com profissionais da área.</p></details>
+      <details><summary>A Vanguard Saúde é outra escola?</summary><p>Não. É o atendimento em português da Vanguard School of Professional Health, a mesma escola licenciada em Lauderhill, na Flórida.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div class="revela">
+      <span class="eyebrow">Contato</span>
+      <h2 style="margin-top:12px">Fale com a gente em português</h2>
+      <p class="lead" style="margin-top:16px">Deixe seus dados e a nossa equipe chama você no WhatsApp.</p>
+      <div class="info" style="margin-top:32px">
+        <div class="bloco"><b>WhatsApp</b><a class="js-wa js-wa-num" href="#contato" data-msg="Olá! Quero saber mais sobre os cursos da Vanguard.">(954) 000-0000</a></div>
+        <div class="bloco"><b>Endereço do campus</b><span>7100 W Commercial Blvd, Suite 101<br>Lauderhill, FL 33319, EUA</span><a href="https://www.google.com/maps/search/?api=1&query=Vanguard+School+of+Professional+Health+7100+W+Commercial+Blvd+Lauderhill+FL">Ver no mapa e as avaliações no Google</a></div>
+        <a class="oficial" href="https://vanguardschoolofhealth.com"><img src="assets/simbolo-azul.svg" alt=""><div><b>Conheça a escola oficial</b><span>vanguardschoolofhealth.com · site em inglês</span></div></a>
+      </div>
+    </div>
+    <form class="form revela" id="form-contato" novalidate>
+      <label for="f-nome">Nome<input id="f-nome" name="nome" autocomplete="name" required></label>
+      <div class="linha">
+        <label for="f-whats">WhatsApp<input id="f-whats" name="whatsapp" type="tel" autocomplete="tel" placeholder="+1 ou +55" required></label>
+        <label for="f-email">E-mail<input id="f-email" name="email" type="email" autocomplete="email"></label>
+      </div>
+      <div class="linha">
+        <label for="f-curso">Curso de interesse<select id="f-curso" name="curso"><option>Técnico em Hemodiálise</option><option>Técnico de Cuidados ao Paciente</option><option>Cuidador Domiciliar</option><option>Ainda não sei</option></select></label>
+        <label for="f-pais">Onde você mora<select id="f-pais" name="pais"><option>Nos Estados Unidos</option><option>No Brasil</option><option>Em outro país</option></select></label>
+      </div>
+      <button class="btn btn-wa" type="submit" style="justify-content:center">Quero ser chamado no WhatsApp</button>
+      <p class="aviso">Usamos seus dados só para entrar em contato sobre os cursos. Veja a política de privacidade no rodapé.</p>
+      <p class="ok" id="f-ok" role="status">Obrigado! Recebemos seus dados e vamos chamar você no WhatsApp em breve.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="marca" href="#inicio"><img class="sim" src="assets/simbolo-branco.svg" alt=""><div><div class="nome"><span>V</span>ANGUARD</div><span class="sub">SCHOOL OF PROFESSIONAL HEALTH</span></div></a>
+      <p style="margin-top:18px">Vanguard Saúde é o atendimento em português da Vanguard School of Professional Health.</p>
+    </div>
+    <div>
+      <h4>Campus</h4>
+      <p>7100 W Commercial Blvd, Suite 101<br>Lauderhill, FL 33319, EUA</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <p><a href="#cursos">Cursos</a><br><a href="#duvidas">Dúvidas</a><br><a href="https://vanguardschoolofhealth.com">Site oficial (inglês)</a></p>
+    </div>
+    <div class="legal">
+      <p>Vanguard School of Professional Health, LLC. Licenciada pela Commission for Independent Education, Florida Department of Education, licença nº 5623. Informações adicionais sobre a instituição podem ser obtidas com a Commission for Independent Education, 325 W. Gaines Street, Suite 1414, Tallahassee, FL 32399-0400, telefone (888) 224-6684.</p>
+      <details id="privacidade"><summary>Política de privacidade</summary><p>Coletamos apenas os dados que você informa no formulário (nome, WhatsApp, e-mail, curso de interesse e país) para responder ao seu contato sobre os cursos. Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. Este site pode usar ferramentas de medição, como Google Analytics e Meta Pixel, para entender o uso das páginas e melhorar nossos anúncios. Para pedir a exclusão dos seus dados, fale conosco pelo WhatsApp.</p></details>
+      <p>© 2026 Vanguard School of Professional Health. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-flutuante js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre os cursos da Vanguard." aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+// Número oficial do WhatsApp da Vanguard Saúde: preencher quando a linha estiver ativa (só dígitos, com DDI, ex.: 19545551234)
+var WHATSAPP = "";
+
+(function(){
+  var links = document.querySelectorAll(".js-wa");
+  links.forEach(function(a){
+    if (WHATSAPP) {
+      a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.getAttribute("data-msg") || "Olá!");
+      a.target = "_blank"; a.rel = "noopener";
+    }
+  });
+
+  var form = document.getElementById("form-contato");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var nome = form.nome.value.trim(), whats = form.whatsapp.value.trim();
+    if (!nome || !whats) { (nome ? form.whatsapp : form.nome).focus(); return; }
+    document.getElementById("f-ok").style.display = "block";
+    if (WHATSAPP) {
+      var msg = "Olá! Meu nome é " + nome + ". Tenho interesse no curso " + form.curso.value + ". Moro " + form.pais.value.toLowerCase() + ". Meu WhatsApp: " + whats;
+      window.location.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+    }
+  });
+
+  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.remove("fora"); io.unobserve(en.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll(".revela").forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top > window.innerHeight) { el.classList.add("fora"); io.observe(el); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
