@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vanguard Saúde</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Técnico em Hemodiálise nos EUA na Vanguard School of Professional Health, escola licenciada na Flórida. Aulas em inglês, atendimento em português.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,16 +54,10 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 .topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--nevoa)}
 .topo .wrap{display:flex;align-items:center;gap:24px;height:96px}
 .marca{display:flex;align-items:center;gap:14px;text-decoration:none}
-.marca img.sim{width:46px;height:auto}
-.marca-topo img.sim{width:58px}
-.marca-topo .nome{font-size:31px}
-.marca-topo .sub{font-size:12.5px;margin-top:6px}
+.marca-topo img.logo-h{height:60px;width:auto;display:block}
 .marca .divisor{width:1px;height:46px;background:#CBD3E1;margin:0 4px}
 .flags-topo{gap:8px}
 .flags-topo img{width:36px;height:24px;border-radius:4px}
-.marca .nome{font-family:var(--display);font-weight:700;font-size:24px;color:var(--azul);letter-spacing:.02em;line-height:1}
-.marca .nome span{font-size:1.2em}
-.marca .sub{display:block;font-family:"Times New Roman",Georgia,serif;font-weight:700;font-size:10.5px;letter-spacing:.09em;color:var(--marinho);margin-top:5px;white-space:nowrap}
 .menu{display:flex;gap:26px;margin-left:auto}
 .menu a{text-decoration:none;font-weight:600;font-size:16px;color:var(--marinho)}
 .menu a:hover{color:var(--azul-vivo)}
@@ -69,7 +65,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 
 /* Abertura */
 .hero{position:relative;background:var(--creme);overflow:hidden}
-.hero .foto{position:absolute;inset:0 0 0 38%;background:url(assets/capa.jpg) 70% center/cover no-repeat}
+.hero .foto{position:absolute;inset:0 0 0 38%;background:url(assets/real-recepcao.jpg) 58% center/cover no-repeat}
 .hero .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--creme) 0%,rgba(245,243,238,.85) 22%,rgba(245,243,238,0) 55%)}
 .hero .wrap{position:relative;padding-top:88px;padding-bottom:96px}
 .hero .conteudo{max-width:560px}
@@ -198,8 +194,7 @@ section{padding:96px 0}
 /* Rodapé */
 footer{background:var(--marinho);color:#BFD0EA;padding:64px 0 40px;font-size:15px}
 footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
-footer .marca .nome{color:#fff}
-footer .marca .sub{color:#BFD0EA}
+footer .marca img.logo-v{width:260px;height:auto;display:block}
 footer h4{font-family:var(--display);color:#fff;font-size:16px;margin-bottom:10px}
 footer a{color:#fff}
 footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:24px;display:grid;gap:12px;font-size:14px}
@@ -228,6 +223,7 @@ footer details p{margin-top:10px;max-width:90ch}
 /* Celular */
 @media (max-width:980px){
   .menu{display:none}
+  .topo .btn{margin-left:auto}
   .confianca ul{grid-template-columns:1fr 1fr}
   .confianca li:nth-child(3){border-left:0}
   .confianca li{border-top:1px solid rgba(255,255,255,.14)}
@@ -244,18 +240,20 @@ footer details p{margin-top:10px;max-width:90ch}
   .galeria .g7{grid-column:span 2}
   body{font-size:17px}
   section{padding:68px 0}
-  .hero .foto{position:relative;inset:auto;height:300px;background-position:72% center}
+  .hero .foto{position:relative;inset:auto;height:300px;background-position:55% center}
   .hero .foto::after{background:linear-gradient(180deg,rgba(245,243,238,0) 60%,var(--creme) 100%)}
   .hero .wrap{padding-top:28px;padding-bottom:64px}
   .topo .btn span{display:none}
-  .marca-topo img.sim{width:42px}
-  .marca-topo .nome{font-size:23px}
-  .marca-topo .sub{font-size:9.5px}
+  .marca-topo img.logo-h{height:40px}
   .marca .divisor{display:none}
   .flags-topo img{width:28px;height:19px}
   .topo .wrap{height:76px}
   .form .linha{grid-template-columns:1fr}
   .form{padding:24px}
+}
+@media (max-width:420px){
+  .flags-topo{display:none}
+  .marca-topo img.logo-h{height:36px}
 }
 @media (max-width:440px){.confianca ul{grid-template-columns:1fr}.confianca li{border-left:0}}
 </style>
@@ -265,11 +263,7 @@ footer details p{margin-top:10px;max-width:90ch}
 <header class="topo">
   <div class="wrap">
     <a class="marca marca-topo" href="#inicio" aria-label="Vanguard School of Professional Health, início">
-      <img class="sim" src="assets/simbolo-azul.svg" alt="">
-      <div class="palavras">
-        <div class="nome"><span>V</span>ANGUARD</div>
-        <span class="sub">SCHOOL OF PROFESSIONAL HEALTH</span>
-      </div>
+      <img class="logo-h" src="assets/logo-horizontal.png" alt="Vanguard, Escola de Formação Profissional em Saúde" width="997" height="192">
       <span class="divisor" aria-hidden="true"></span>
       <span class="flags flags-topo" aria-label="Atendimento em português, aulas em inglês"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>
     </a>
@@ -290,7 +284,7 @@ footer details p{margin-top:10px;max-width:90ch}
 <main id="inicio">
 
 <section class="hero" style="padding:0">
-  <div class="foto" role="img" aria-label="Técnica em hemodiálise ajustando a máquina ao lado de um paciente"></div>
+  <div class="foto" role="img" aria-label="Recepção da Vanguard School of Professional Health em Lauderhill, com o nome da escola no balcão"></div>
   <div class="wrap">
     <div class="conteudo">
       <span class="selo-idioma"><span class="flags"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>Atendimento em português</span>
@@ -350,7 +344,7 @@ footer details p{margin-top:10px;max-width:90ch}
         <p class="horas">130 horas de laboratório</p>
       </article>
       <article class="passo revela">
-        <div class="img"><img src="assets/linhas.jpg" alt="Mãos com luvas azuis ajustando as linhas da máquina de diálise" loading="lazy"></div>
+        <div class="img"><img src="assets/real-demo.jpg" alt="Instrutor da Vanguard demonstrando uma linha de diálise aos alunos" loading="lazy"></div>
         <span class="num">PASSO 3</span>
         <h3>Estágio em clínica</h3>
         <p>A etapa final é feita numa clínica de diálise parceira, ao lado de profissionais certificados.</p>
@@ -411,8 +405,8 @@ footer details p{margin-top:10px;max-width:90ch}
     </div>
     <div class="galeria">
       <figure class="g1 revela"><div class="ft"><img src="assets/real-diretora.jpg" alt="Diretora da escola recebendo a turma em sala de aula" loading="lazy" style="object-position:center 35%"></div><figcaption>Boas-vindas à turma</figcaption></figure>
-      <figure class="revela"><div class="ft"><img src="assets/real-sala.jpg" alt="Sala de aula com carteiras e equipamento de diálise" loading="lazy"></div><figcaption>Sala de aula</figcaption></figure>
-      <figure class="revela"><div class="ft"><img src="assets/real-demo.jpg" alt="Instrutor demonstrando uma linha de diálise para os alunos" loading="lazy"></div><figcaption>Aula prática com instrutor</figcaption></figure>
+      <figure class="revela"><div class="ft"><img src="assets/real-entrada-bonent.jpg" alt="Entrada da Vanguard com o selo BONENT Approved Training Program na vitrine" loading="lazy" style="object-position:72% center"></div><figcaption>Programa aprovado pelo BONENT</figcaption></figure>
+      <figure class="revela"><div class="ft"><img src="assets/real-mesa.jpg" alt="Mesa com a marca Vanguard e materiais da escola numa sala do campus" loading="lazy" style="object-position:center 60%"></div><figcaption>Espaço de aula no campus</figcaption></figure>
       <figure class="g7 revela"><div class="ft"><img src="assets/real-turma.jpg" alt="Turma reunida em atividade sobre acessos para diálise" loading="lazy" style="object-position:center 40%"></div><figcaption>Turma em atividade</figcaption></figure>
     </div>
   </div>
@@ -420,7 +414,7 @@ footer details p{margin-top:10px;max-width:90ch}
 
 <section class="idioma-bloco">
   <div class="wrap">
-    <div class="img revela"><img src="assets/real-fachada.jpg" alt="Fachada da Vanguard School of Professional Health na Suite 101, em Lauderhill, com o selo BONENT Approved Training Program" loading="lazy" style="object-position:center 30%"></div>
+    <div class="img revela"><img src="assets/real-fachada.jpg" alt="Fachada da Vanguard School of Professional Health na Suite 101, em Lauderhill, com o selo BONENT Approved Training Program" loading="lazy" style="object-position:center 45%"></div>
     <div class="revela">
       <span class="eyebrow">Por que Vanguard Saúde</span>
       <h2>Uma escola americana que fala a sua língua</h2>
@@ -472,7 +466,7 @@ footer details p{margin-top:10px;max-width:90ch}
       <div class="info" style="margin-top:32px">
         <div class="bloco"><b>WhatsApp</b><a class="js-wa js-wa-num" href="#contato" data-msg="Olá! Quero saber mais sobre os cursos da Vanguard.">(954) 000-0000</a></div>
         <div class="bloco"><b>Endereço do campus</b><span>7100 W Commercial Blvd, Suite 101<br>Lauderhill, FL 33319, EUA</span><a href="https://www.google.com/maps/search/?api=1&query=Vanguard+School+of+Professional+Health+7100+W+Commercial+Blvd+Lauderhill+FL">Ver no mapa e as avaliações no Google</a></div>
-        <a class="oficial" href="https://vanguardschoolofhealth.com"><img src="assets/simbolo-azul.svg" alt=""><div><b>Conheça a escola oficial</b><span>vanguardschoolofhealth.com · site em inglês</span></div></a>
+        <a class="oficial" href="https://vanguardschoolofhealth.com"><img src="assets/simbolo-novo.png" alt=""><div><b>Conheça a escola oficial</b><span>vanguardschoolofhealth.com · site em inglês</span></div></a>
       </div>
     </div>
     <form class="form revela" id="form-contato" novalidate>
@@ -497,7 +491,7 @@ footer details p{margin-top:10px;max-width:90ch}
 <footer>
   <div class="wrap">
     <div>
-      <a class="marca" href="#inicio"><img class="sim" src="assets/simbolo-branco.svg" alt=""><div><div class="nome"><span>V</span>ANGUARD</div><span class="sub">SCHOOL OF PROFESSIONAL HEALTH</span></div></a>
+      <a class="marca" href="#inicio"><img class="logo-v" src="assets/logo-vertical-branco.png" alt="Vanguard, Escola de Formação Profissional em Saúde" width="900" height="384"></a>
       <p style="margin-top:18px">Vanguard Saúde é o atendimento em português da Vanguard School of Professional Health.</p>
     </div>
     <div>
