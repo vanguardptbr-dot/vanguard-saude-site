@@ -112,24 +112,33 @@ section{padding:96px 0}
 
 /* Cursos */
 .cursos{background:var(--creme)}
-.grade-cursos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.curso{background:#fff;border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(13,27,62,.06)}
-.curso .img{aspect-ratio:4/3;overflow:hidden}
-.curso .img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.curso .corpo{flex:1}
-.curso a{margin-top:auto!important;padding-top:6px}
-.curso .corpo{padding:34px 30px 32px;display:flex;flex-direction:column;gap:12px;border-top:6px solid var(--azul-vivo)}
-.curso.destaque .corpo{background:var(--azul);color:#DCE6F5;border-top-color:#9FC0F0}
-.curso.destaque h3,.curso.destaque .horas-grande{color:#fff}
-.curso.destaque a{color:#fff}
-.horas-grande{font-family:var(--display);font-weight:800;font-size:64px;line-height:.9;color:var(--azul);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.horas-grande small{font-size:18px;font-weight:600;letter-spacing:0;margin-left:8px}
-.curso .meta{display:flex;flex-wrap:wrap;gap:8px}
-.curso .meta span{font-size:14px;font-weight:600;background:var(--nevoa);color:var(--azul);padding:4px 12px;border-radius:999px}
-.curso.destaque .meta span{background:rgba(255,255,255,.14);color:#fff}
-.curso p{font-size:17px}
-.curso a{margin-top:6px;font-weight:700;color:var(--azul);text-decoration:none}
-.curso a:hover{text-decoration:underline;text-underline-offset:4px}
+.curso-principal{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;background:var(--azul);color:#DCE6F5;border-radius:var(--raio);padding:48px}
+.cp-texto{display:flex;flex-direction:column;gap:14px}
+.cp-texto .etiqueta{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9FC0F0}
+.cp-texto h3{font-size:clamp(28px,3.2vw,40px);line-height:1.1;color:#fff}
+.cp-texto .en{font-size:16px;color:#BFD0EA;margin-top:-6px}
+.cp-texto p{font-size:18px}
+.cp-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:10px}
+.cp-acoes .ver{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.cp-dados{margin:0;display:grid}
+.cp-dados div{padding:16px 0;border-top:1px solid rgba(255,255,255,.18)}
+.cp-dados div:first-child{border-top:0;padding-top:0}
+.cp-dados dt{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FC0F0}
+.cp-dados dd{margin:6px 0 0;font-size:18px;font-weight:600;color:#fff}
+.cp-dados dd.grande{font-family:var(--display);font-weight:800;font-size:46px;line-height:1;letter-spacing:-.02em}
+.outros-cab{margin:64px 0 24px;display:flex;flex-direction:column;gap:6px}
+.outros-cab h3{color:var(--marinho)}
+.outros-cab p{font-size:17px}
+.grade-outros{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.curso-outro{background:#fff;border-radius:var(--raio);padding:30px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 3px rgba(13,27,62,.06)}
+.curso-outro .en{font-size:15px;color:#4B5563;margin-top:-8px}
+.curso-outro .dur{font-weight:700;font-size:18px;color:var(--azul)}
+.curso-outro .meta{display:flex;flex-wrap:wrap;gap:8px}
+.curso-outro .meta span{font-size:14px;font-weight:600;background:var(--nevoa);color:var(--azul);padding:4px 12px;border-radius:999px}
+.curso-outro p{font-size:17px}
+.curso-outro .sep{font-size:15px;color:#4B5563}
+.curso-outro a{margin-top:auto;padding-top:6px;font-weight:700;color:var(--azul);text-decoration:none}
+.curso-outro a:hover{text-decoration:underline;text-underline-offset:4px}
 
 
 /* Escola por dentro: fotos reais */
@@ -227,7 +236,11 @@ footer details p{margin-top:10px;max-width:90ch}
   .confianca ul{grid-template-columns:1fr 1fr}
   .confianca li:nth-child(3){border-left:0}
   .confianca li{border-top:1px solid rgba(255,255,255,.14)}
-  .passos,.grade-cursos{grid-template-columns:1fr}
+  .passos,.grade-outros,.curso-principal{grid-template-columns:1fr}
+  .curso-principal{display:flex;flex-direction:column;gap:14px;padding:34px 24px}
+  .cp-texto{display:contents}
+  .cp-dados{order:1;margin:14px 0 6px}
+  .cp-acoes{order:2}
   .idioma-bloco .wrap,.contato .wrap,.carreira .wrap{grid-template-columns:1fr;gap:40px}
   .carreira .texto{padding:64px 24px}
   .carreira .img{min-height:300px}
@@ -314,9 +327,9 @@ footer details p{margin-top:10px;max-width:90ch}
 <section id="como-funciona">
   <div class="wrap">
     <div class="cab revela">
-      <span class="eyebrow">Como funciona</span>
-      <h2>Do estudo em casa à prática numa clínica de diálise</h2>
-      <p class="lead">O curso de Técnico em Hemodiálise combina estudo online com aulas práticas no campus e estágio supervisionado.</p>
+      <span class="eyebrow">Passo a passo</span>
+      <h2>Como funciona o curso de Técnico em Hemodiálise</h2>
+      <p class="lead">Do estudo em casa à prática numa clínica de diálise: teoria online, aulas práticas no campus e estágio supervisionado.</p>
     </div>
     <div class="passos">
       <article class="passo revela">
@@ -359,38 +372,49 @@ footer details p{margin-top:10px;max-width:90ch}
   <div class="wrap">
     <div class="cab revela">
       <span class="eyebrow">Cursos</span>
-      <h2>Escolha a sua formação na área da saúde</h2>
+      <h2>Três cursos diferentes. Você escolhe um.</h2>
+      <p class="lead">Cada curso é uma formação completa, com diploma próprio. As horas não se somam.</p>
     </div>
-    <div class="grade-cursos">
-      <article class="curso destaque revela">
-        
-        <div class="corpo">
-          <div class="horas-grande">600<small>horas</small></div>
-          <h3>Técnico em Hemodiálise</h3>
-          <div class="meta"><span>Teoria online + campus</span><span>Estágio em clínica</span></div>
-          <p>Hemodialysis Technician. Prepara você para atuar em clínicas de diálise e para as provas nacionais de certificação.</p>
-          <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Técnico em Hemodiálise.">Quero saber mais</a>
+    <article class="curso-principal revela">
+      <div class="cp-texto">
+        <span class="etiqueta">Especialidade da Vanguard</span>
+        <h3>Técnico em Hemodiálise</h3>
+        <p class="en">Hemodialysis Technician</p>
+        <p>Prepara você para trabalhar em clínicas de diálise e para as provas nacionais de certificação.</p>
+        <div class="cp-acoes">
+          <a class="btn btn-claro js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Técnico em Hemodiálise.">Quero saber mais</a>
+          <a class="ver" href="#como-funciona">Ver como funciona</a>
         </div>
+      </div>
+      <dl class="cp-dados">
+        <div><dt>Duração total</dt><dd class="grande">600 horas</dd></div>
+        <div><dt>Tempo</dt><dd>Cerca de 30 semanas em período integral ou 38 em meio período</dd></div>
+        <div><dt>Formato</dt><dd>Teoria online, laboratório em Lauderhill e estágio em clínica</dd></div>
+        <div><dt>Ao concluir</dt><dd>Diploma de Técnico em Hemodiálise</dd></div>
+      </dl>
+    </article>
+    <div class="outros-cab revela">
+      <h3>Outros cursos da escola</h3>
+      <p>Cursos independentes, que não fazem parte do curso de hemodiálise.</p>
+    </div>
+    <div class="grade-outros">
+      <article class="curso-outro revela">
+        <h3>Técnico de Cuidados ao Paciente</h3>
+        <p class="en">Patient Care Technician</p>
+        <p class="dur">Duração total: 600 horas</p>
+        <div class="meta"><span>Presencial</span><span>EKG e flebotomia</span></div>
+        <p>Formação ampla para hospitais e clínicas, com EKG, flebotomia e cuidados de enfermagem.</p>
+        <p class="sep">Curso separado, com diploma próprio.</p>
+        <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Patient Care Technician.">Quero saber mais</a>
       </article>
-      <article class="curso revela">
-        
-        <div class="corpo">
-          <div class="horas-grande">600<small>horas</small></div>
-          <h3>Técnico de Cuidados ao Paciente</h3>
-          <div class="meta"><span>Presencial</span><span>EKG e flebotomia</span></div>
-          <p>Patient Care Technician. Formação ampla para hospitais e clínicas, com EKG, flebotomia e cuidados de enfermagem.</p>
-          <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Patient Care Technician.">Quero saber mais</a>
-        </div>
-      </article>
-      <article class="curso revela">
-        
-        <div class="corpo">
-          <div class="horas-grande">75<small>horas</small></div>
-          <h3>Cuidador Domiciliar</h3>
-          <div class="meta"><span>Presencial</span><span>Curso rápido</span></div>
-          <p>Home Health Aide. Curso rápido para quem quer trabalhar com cuidados de pacientes em casa.</p>
-          <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Home Health Aide.">Quero saber mais</a>
-        </div>
+      <article class="curso-outro revela">
+        <h3>Cuidador Domiciliar</h3>
+        <p class="en">Home Health Aide</p>
+        <p class="dur">Duração total: 75 horas</p>
+        <div class="meta"><span>Presencial</span><span>Curso rápido</span></div>
+        <p>Curso rápido para quem quer trabalhar com cuidados de pacientes em casa.</p>
+        <p class="sep">Curso separado, com diploma próprio.</p>
+        <a class="js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Home Health Aide.">Quero saber mais</a>
       </article>
     </div>
   </div>
