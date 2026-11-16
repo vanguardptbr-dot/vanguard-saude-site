@@ -54,12 +54,13 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 .topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--nevoa)}
 .topo .wrap{display:flex;align-items:center;gap:24px;height:96px}
 .marca{display:flex;align-items:center;gap:14px;text-decoration:none}
-.marca-topo img.logo-h{height:60px;width:auto;display:block}
+.marca-topo img.logo-h{height:56px;width:auto;display:block}
 .marca .divisor{width:1px;height:46px;background:#CBD3E1;margin:0 4px}
 .flags-topo{gap:8px}
 .flags-topo img{width:36px;height:24px;border-radius:4px}
-.menu{display:flex;gap:26px;margin-left:auto}
-.menu a{text-decoration:none;font-weight:600;font-size:16px;color:var(--marinho)}
+.menu{display:flex;gap:20px;margin-left:auto}
+.menu a{text-decoration:none;font-weight:600;font-size:15px;color:var(--marinho);white-space:nowrap}
+@media (max-width:1320px){.topo .marca .divisor,.topo .flags-topo{display:none}}
 .menu a:hover{color:var(--azul-vivo)}
 .topo .btn{padding:11px 20px;font-size:15px}
 
@@ -173,6 +174,24 @@ section{padding:96px 0}
 .carreira .img{min-height:460px;background:url(assets/real-formandos.jpg) center 22%/cover}
 
 /* Dúvidas */
+.clinicas .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.clinicas .cab{margin-bottom:0}
+.clinicas .pontos{display:grid}
+.clinicas .ponto{padding:22px 0;border-top:1px solid #D9DFEA}
+.clinicas .ponto:first-child{border-top:0;padding-top:6px}
+.clinicas .ponto b{display:block;font-family:var(--display);font-weight:600;font-size:20px;color:var(--marinho);margin-bottom:6px}
+.clinicas .ponto span{font-size:17px}
+.estrangeiro{background:var(--marinho);color:#DCE6F5}
+.estrangeiro .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center}
+.estrangeiro .texto{display:flex;flex-direction:column;gap:18px}
+.estrangeiro .eyebrow{color:#9FC0F0}
+.estrangeiro h2{color:#fff}
+.estrangeiro p{font-size:19px;max-width:58ch}
+.estrangeiro .fatos{display:grid}
+.estrangeiro .fato{padding:18px 0;border-top:1px solid rgba(255,255,255,.16)}
+.estrangeiro .fato:first-child{border-top:0;padding-top:0}
+.estrangeiro .fato b{display:block;font-family:var(--display);font-weight:600;font-size:19px;color:#fff;margin-bottom:4px}
+.estrangeiro .fato span{font-size:16px;color:#BFD0EA}
 .faq{max-width:860px}
 .faq details{border-bottom:1px solid #D9DFEA}
 .faq summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;position:relative;font-family:var(--display);font-weight:600;font-size:20px;color:var(--marinho)}
@@ -237,7 +256,8 @@ footer details p{margin-top:10px;max-width:90ch}
   .confianca ul{grid-template-columns:1fr 1fr}
   .confianca li:nth-child(3){border-left:0}
   .confianca li{border-top:1px solid rgba(255,255,255,.14)}
-  .passos,.grade-outros,.curso-principal{grid-template-columns:1fr}
+  .passos,.grade-outros,.curso-principal,.clinicas .wrap,.estrangeiro .wrap{grid-template-columns:1fr}
+  .clinicas .wrap,.estrangeiro .wrap{gap:36px}
   .curso-principal{display:flex;flex-direction:column;gap:14px;padding:34px 24px}
   .cp-texto{display:contents}
   .cp-dados{order:1;margin:14px 0 6px}
@@ -284,6 +304,7 @@ footer details p{margin-top:10px;max-width:90ch}
     <nav class="menu" aria-label="Seções">
       <a href="#como-funciona">Como funciona</a>
       <a href="#cursos">Cursos</a>
+      <a href="#clinicas">Clínicas</a>
       <a href="#escola">A escola</a>
       <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
@@ -421,6 +442,38 @@ footer details p{margin-top:10px;max-width:90ch}
   </div>
 </section>
 
+<section class="clinicas" id="clinicas">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="eyebrow">Da sala de aula para as clínicas</span>
+      <h2>As clínicas procuram a Vanguard. A Vanguard indica seus alunos.</h2>
+      <p class="lead">A Vanguard tem parceria com diversas clínicas de hemodiálise. Sempre que precisam de novos profissionais, elas pedem indicações à escola, e nós indicamos nossos alunos. As clínicas contratam boa parte deles, porque o mercado de hemodiálise está sedento por gente bem formada.</p>
+    </div>
+    <div class="pontos revela">
+      <div class="ponto"><b>Estágio dentro da clínica</b><span>O estágio do curso acontece em uma das nossas clínicas parceiras.</span></div>
+      <div class="ponto"><b>Indicação a pedido das clínicas</b><span>Quando uma clínica parceira precisa de profissionais, a Vanguard indica seus alunos.</span></div>
+      <div class="ponto"><b>Boa parte dos alunos contratada</b><span>A contratação é decidida pela clínica, na entrevista.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="estrangeiro" id="estrangeiro">
+  <div class="wrap">
+    <div class="texto revela">
+      <span class="eyebrow">Para estrangeiros</span>
+      <h2>Estrangeiro? A sua formação pode abrir a porta do green card.</h2>
+      <p>Se você é estrangeiro e tem a formação em diálise, as clínicas parceiras da Vanguard podem patrocinar o seu green card de trabalho pelo EB-3. A Vanguard não participa dessa etapa e não cobra nada por ela.</p>
+      <div><a class="btn btn-claro js-wa" href="#contato" data-msg="Olá! Quero saber mais sobre o curso de Técnico em Hemodiálise e as clínicas parceiras.">Falar com a Vanguard no WhatsApp</a></div>
+    </div>
+    <div class="fatos revela">
+      <div class="fato"><b>Formação em diálise</b><span>O ponto de partida é a sua formação em hemodiálise.</span></div>
+      <div class="fato"><b>Indicação da Vanguard</b><span>A pedido da clínica, a escola indica você e faz a ponte entre as partes.</span></div>
+      <div class="fato"><b>Entrevista em português</b><span>A clínica parceira entrevista o candidato em português.</span></div>
+      <div class="fato"><b>Decisão entre a clínica e você</b><span>O patrocínio do green card é acertado entre a clínica e o candidato.</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="escola">
   <div class="wrap">
     <div class="cab revela">
@@ -479,6 +532,8 @@ footer details p{margin-top:10px;max-width:90ch}
       <details><summary>Dá para fazer o curso online?</summary><p>Sim. No curso de Técnico em Hemodiálise, a teoria é 100% online, no seu ritmo, e ao final você recebe o certificado de Técnico em Hemodiálise de uma escola dos Estados Unidos.</p><p>As aulas práticas acontecem no campus em Lauderhill, e o estágio, em uma das nossas clínicas parceiras. Quem já está nos Estados Unidos pode seguir direto para as aulas práticas e o estágio.</p><p>Quem está no Brasil recebe o certificado de Técnico em Hemodiálise e cumpre as horas práticas quando obtiver o visto americano.</p><p>A prova do BONENT pode ser feita num segundo momento e não impede a emissão do certificado.</p></details>
       <details><summary>Quais são os horários?</summary><p>Há turmas diurnas, noturnas e de fim de semana. Pergunte no WhatsApp as datas da próxima turma.</p></details>
       <details><summary>A escola garante emprego?</summary><p>Nenhuma escola séria garante emprego. A Vanguard oferece apoio de carreira: preparação de currículo, orientação para entrevistas e contato com profissionais da área. A pedido das nossas clínicas parceiras, a Vanguard também costuma indicar alunos e fazer a ponte entre eles e as clínicas, para que as partes acertem um eventual patrocínio de green card de trabalho pelo EB-3. Esse patrocínio é uma decisão entre a clínica e o candidato, tomada depois da entrevista. A Vanguard não participa dessa etapa e não cobra nada por ela.</p></details>
+      <details><summary>Como funciona a indicação para as clínicas?</summary><p>Quando uma clínica parceira precisa de novos profissionais, ela pede indicações à Vanguard. A escola indica alunos e faz o contato entre as partes. Daí em diante, entrevista, contratação e eventual patrocínio são tratados diretamente entre a clínica e o candidato.</p></details>
+      <details><summary>As clínicas parceiras patrocinam o green card?</summary><p>Podem patrocinar. Com a formação em diálise e depois da entrevista, que é em português, a clínica parceira pode patrocinar o green card de trabalho pelo EB-3. Essa decisão é da clínica, junto com o candidato.</p></details>
       <details><summary>A Vanguard Saúde é outra escola?</summary><p>Não. É o atendimento em português da Vanguard School of Professional Health, a mesma escola licenciada em Lauderhill, na Flórida.</p></details>
     </div>
   </div>
@@ -530,6 +585,7 @@ footer details p{margin-top:10px;max-width:90ch}
       <p><a href="#cursos">Cursos</a><br><a href="#duvidas">Dúvidas</a><br><a href="https://vanguardschoolofhealth.com">Nosso site em inglês</a></p>
     </div>
     <div class="legal">
+      <p>Contratação e patrocínio dependem da aprovação do empregador na entrevista e dos requisitos da lei.</p>
       <p>Vanguard School of Professional Health, LLC. Licenciada pela Commission for Independent Education, Florida Department of Education, licença nº 5623. Informações adicionais sobre a instituição podem ser obtidas com a Commission for Independent Education, 325 W. Gaines Street, Suite 1414, Tallahassee, FL 32399-0400, telefone (888) 224-6684.</p>
       <details id="privacidade"><summary>Política de privacidade</summary><p>Coletamos apenas os dados que você informa no formulário (nome, WhatsApp, e-mail, curso de interesse e país) para responder ao seu contato sobre os cursos. Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. Este site pode usar ferramentas de medição, como Google Analytics e Meta Pixel, para entender o uso das páginas e melhorar nossos anúncios. Para pedir a exclusão dos seus dados, fale conosco pelo WhatsApp.</p></details>
       <p>© 2026 Vanguard School of Professional Health. Todos os direitos reservados.</p>
