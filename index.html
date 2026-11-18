@@ -395,13 +395,16 @@ footer details p{margin-top:10px;max-width:90ch}
 }
 @media (max-width:440px){.confianca ul{grid-template-columns:1fr}.confianca li{border-left:0;padding:18px 0}.confianca strong{font-size:17px}.confianca small{font-size:14px;margin-top:2px}}
 @media (max-width:380px){.hero .acoes .btn-wa{font-size:15px;padding:14px 12px}}
-.selos-licenca{background:#fff;padding:36px 0;border-bottom:1px solid var(--nevoa)}
+.selos-licenca{background:#fff;padding:40px 0;border-bottom:1px solid var(--nevoa)}
 .selos-licenca .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
-.selos-licenca .sl-texto{max-width:540px;margin:0;color:var(--texto);font-size:17px;line-height:1.55}
+.selos-licenca .sl-texto{max-width:470px;margin:0;color:var(--texto);font-size:17px;line-height:1.55}
 .selos-licenca .sl-texto .eyebrow{display:block;margin-bottom:8px}
-.selos-licenca .sl-logos{display:flex;align-items:center;gap:48px;flex:none}
-.selos-licenca .sl-logos img{height:72px;width:auto}
-@media (max-width:760px){.selos-licenca{padding:32px 0}.selos-licenca .wrap{flex-direction:column;align-items:flex-start;gap:22px}.selos-licenca .sl-logos{gap:28px}.selos-licenca .sl-logos img{height:56px}}
+.selos-licenca .sl-orgao{display:block;font-family:var(--display);font-weight:700;color:var(--marinho);margin-top:6px}
+.selos-licenca .sl-orgao + .sl-orgao{margin-top:0}
+.selos-licenca .sl-end{display:block;font-size:15px;margin-top:4px}
+.selos-licenca .sl-logos{display:flex;align-items:center;gap:44px;flex:none}
+.selos-licenca .sl-logos img{height:76px;width:auto}
+@media (max-width:760px){.selos-licenca{padding:32px 0}.selos-licenca .wrap{flex-direction:column;align-items:flex-start;gap:22px}.selos-licenca .sl-logos{gap:22px;flex-wrap:wrap}.selos-licenca .sl-logos img{height:52px}}
 </style>
 </head>
 <body>
@@ -485,13 +488,14 @@ footer details p{margin-top:10px;max-width:90ch}
   </ul>
 </div>
 
-<!-- Selos da licença, os mesmos da página Licensing/Approvals do site em inglês, organizados numa faixa -->
-<div class="selos-licenca" role="region" aria-label="Licença estadual da escola">
+<!-- Selos da licença: mesmo texto e mesmas logos da página Licensing/Approvals do site em inglês -->
+<div class="selos-licenca" role="region" aria-label="Licenças e aprovações">
   <div class="wrap">
-    <p class="sl-texto"><span class="eyebrow">Licença estadual</span>A Vanguard School of Professional Health é licenciada pela Commission for Independent Education, Florida Department of Education, com a licença número 5623.</p>
+    <p class="sl-texto"><span class="eyebrow">Licenças e aprovações</span>A Vanguard School of Professional Health é licenciada pela:<span class="sl-orgao">Commission for Independent Education</span><span class="sl-orgao">Florida Department of Education</span><span class="sl-end">325 West Gaines Street, Suite 1414<br>Tallahassee, Florida 32399-0400.</span></p>
     <div class="sl-logos">
-      <img src="assets/selo-cie.png" alt="Logo da Commission for Independent Education" width="198" height="180">
-      <img src="assets/selo-fdoe.png" alt="Logo do Florida Department of Education" width="615" height="180">
+      <img src="assets/selo-cie.png" alt="Commission for Independent Education" width="198" height="180">
+      <img src="assets/selo-fdoe.png" alt="Florida Department of Education" width="615" height="180">
+      <img src="assets/selo-vr.png" alt="Vocational Rehabilitation" width="209" height="180">
     </div>
   </div>
 </div>
