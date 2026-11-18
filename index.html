@@ -7,6 +7,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Técnico em Hemodiálise nos EUA na Vanguard School of Professional Health, escola licenciada na Flórida. Aulas em inglês com professor brasileiro e atendimento em português.">
+<script>
+// Promoção de fim de ano: fica no ar até 31/12/2026, 23h59 de Lauderhill (UTC-5).
+// Em 1º/1/2027 o site volta sozinho ao normal. O site sem a promoção está salvo no branch site-normal-antes-promo.
+var PROMO_FIM = Date.UTC(2027, 0, 1, 5, 0, 0);
+if (Date.now() < PROMO_FIM) document.documentElement.className += " promo-on";
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -53,7 +59,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 /* Topo */
 .topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--nevoa)}
 .topo .wrap{display:flex;align-items:center;gap:24px;height:96px}
-.marca{display:flex;align-items:center;gap:14px;text-decoration:none}
+.marca{display:flex;align-items:center;gap:14px;text-decoration:none;flex:none}
 .marca-topo img.logo-h{height:64px;width:auto;display:block}
 .marca .divisor{width:1px;height:46px;background:#CBD3E1;margin:0 4px}
 .flags-topo{gap:8px}
@@ -88,6 +94,60 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 .hero .idioma{margin-top:34px;font-weight:700;font-size:18px;color:var(--marinho);display:flex;flex-wrap:wrap;gap:6px 18px}
 .hero .idioma span{display:inline-flex;align-items:center;gap:8px}
 .hero .idioma img{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(13,27,62,.12)}
+
+/* Promoção de fim de ano (até 31/12/2026). Para retirar de vez: apagar os blocos marcados com "promo". */
+:root{--preto:#06080F;--ouro:#FFC83D;--cinza-promo:#AEB9CC}
+.promo{display:none}
+.promo-on .promo{display:block}
+.promo-on .so-normal{display:none}
+.promo-on .menu a.promo{display:inline-flex}
+.menu a.promo{align-items:center;background:var(--preto);color:var(--ouro);padding:5px 14px;border-radius:999px;margin:-5px 0}
+.menu a.promo:hover{color:#fff}
+.hero-promo{position:relative;background:var(--preto);color:#DCE6F5;overflow:hidden}
+.hero-promo .foto{position:absolute;inset:0 0 0 44%;background:url(assets/real-lab-simulacao.jpg) 35% center/cover no-repeat}
+.hero-promo .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--preto) 0%,rgba(6,8,15,.92) 16%,rgba(6,8,15,.58) 50%,rgba(6,8,15,.4) 100%)}
+.hero-promo .wrap{position:relative;padding-top:60px;padding-bottom:68px}
+.hero-promo .conteudo{max-width:720px}
+.selos{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.selo-oferta{background:var(--ouro);color:var(--preto);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+.selo-prazo{background:rgba(255,200,61,.14);color:var(--ouro);font-weight:700;font-size:15px;padding:7px 16px;border-radius:999px}
+.hero-promo h1{color:#fff;font-size:clamp(32px,3.6vw,48px);font-weight:800;margin-top:22px}
+.hero-promo h1 em{font-style:normal;color:#8FB8F0}
+.preco{margin-top:24px}
+.preco .regular{font-size:18px;font-weight:600;color:var(--cinza-promo)}
+.preco .por{font-family:var(--display);font-weight:800;color:#fff;font-size:clamp(68px,8.4vw,108px);line-height:1;letter-spacing:-.03em;margin-top:4px;white-space:nowrap}
+.preco .por small{font-size:.3em;font-weight:700;color:var(--cinza-promo);letter-spacing:0;margin-right:.25em;vertical-align:.95em}
+.preco .economia{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:16px}
+.preco .economia b{background:var(--ouro);color:var(--preto);font-weight:800;font-size:18px;padding:6px 14px;border-radius:8px}
+.preco .economia span{font-size:17px;color:#DCE6F5;font-weight:600}
+.fatos-promo{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid rgba(255,255,255,.16)}
+.fatos-promo li{padding:18px 18px 0 0}
+.fatos-promo li+li{padding-left:18px;border-left:1px solid rgba(255,255,255,.16)}
+.fatos-promo b{display:block;font-family:var(--display);font-size:24px;font-weight:700;color:#fff;line-height:1.1}
+.fatos-promo span{display:block;font-size:15px;color:var(--cinza-promo);line-height:1.4;margin-top:6px}
+.hero-promo .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-promo .btn-link{color:#fff}
+.contagem{margin-top:14px;font-size:15px;color:var(--cinza-promo)}
+.contagem b{color:var(--ouro);font-size:17px}
+.hero-promo .idioma{margin-top:22px;font-weight:600;font-size:16px;color:#DCE6F5;display:flex;flex-wrap:wrap;gap:6px 18px}
+.hero-promo .idioma span{display:inline-flex;align-items:center;gap:8px}
+.hero-promo .idioma img{width:24px;height:16px;border-radius:2px}
+.condicoes{background:var(--creme)}
+.cond-grade{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cond{background:#fff;border-radius:var(--raio);padding:28px 24px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(13,27,62,.06)}
+.cond .rot{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azul-vivo)}
+.cond b{font-family:var(--display);font-size:32px;font-weight:800;color:var(--marinho);line-height:1.05;letter-spacing:-.02em}
+.cond p{font-size:16px;line-height:1.5}
+.cond.escuro{background:var(--preto);color:#DCE6F5}
+.cond.escuro .rot{color:var(--ouro)}
+.cond.escuro b{color:#fff}
+.bonent-box{margin-top:24px;display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;background:#fff;border-radius:var(--raio);padding:24px;box-shadow:0 1px 3px rgba(13,27,62,.06)}
+.bonent-box .ft{border-radius:10px;overflow:hidden;aspect-ratio:4/3}
+.bonent-box .ft img{width:100%;height:100%;object-fit:cover;object-position:72% center}
+.bonent-box h3{color:var(--marinho);margin-bottom:8px}
+.bonent-box p{font-size:17px;max-width:72ch}
+.cond-rodape{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:32px}
+.letras{font-size:14px;color:#5B6680;max-width:78ch;line-height:1.5}
 
 /* Faixa de confiança */
 .confianca{background:var(--marinho);color:#fff}
@@ -256,7 +316,12 @@ footer details p{margin-top:10px;max-width:90ch}
 
 /* Movimento suave na entrada (sempre visível) */
 @media (prefers-reduced-motion:no-preference){
-  .hero .conteudo>*{animation:sobe .7s ease both}
+  .hero .conteudo>*,.hero-promo .conteudo>*{animation:sobe .7s ease both}
+  .hero-promo .conteudo>*:nth-child(2){animation-delay:.06s}
+  .hero-promo .conteudo>*:nth-child(3){animation-delay:.12s}
+  .hero-promo .conteudo>*:nth-child(4){animation-delay:.18s}
+  .hero-promo .conteudo>*:nth-child(5){animation-delay:.24s}
+  .hero-promo .foto{animation:zoom 1.6s ease both}
   .hero .conteudo>*:nth-child(2){animation-delay:.08s}
   .hero .conteudo>*:nth-child(3){animation-delay:.16s}
   .hero .conteudo>*:nth-child(4){animation-delay:.24s}
@@ -268,6 +333,8 @@ footer details p{margin-top:10px;max-width:90ch}
 @keyframes sobe{from{transform:translateY(18px)}to{transform:none}}
 @keyframes zoom{from{transform:scale(1.06)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+@media (min-width:981px) and (max-width:1180px){.topo .wrap{gap:16px}.menu{gap:14px}.menu a{font-size:14px}.marca-topo img.logo-h{height:54px}}
 
 /* Celular */
 @media (max-width:980px){
@@ -293,6 +360,10 @@ footer details p{margin-top:10px;max-width:90ch}
   .hero .wrap{padding-top:32px;padding-bottom:64px}
   .hero .conteudo{max-width:640px}
   footer .wrap{grid-template-columns:1fr}
+  .hero-promo .foto{position:relative;inset:auto;height:220px;background-position:center 48%}
+  .hero-promo .foto::after{background:linear-gradient(180deg,rgba(6,8,15,.15) 0%,rgba(6,8,15,.35) 55%,var(--preto) 100%)}
+  .hero-promo .wrap{padding-top:4px;padding-bottom:56px}
+  .cond-grade{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
   .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
@@ -316,6 +387,26 @@ footer details p{margin-top:10px;max-width:90ch}
   .topo .wrap{height:76px}
   .form .linha{grid-template-columns:1fr}
   .form{padding:24px}
+  .hero-promo .foto{height:170px}
+  .hero-promo .conteudo{display:flex;flex-direction:column}
+  .hero-promo .acoes{order:1;margin-top:26px}
+  .hero-promo .contagem{order:2}
+  .fatos-promo{order:3}
+  .hero-promo .idioma{order:4}
+  .hero-promo .acoes .btn-wa{width:100%;font-size:16px;padding:15px 16px}
+  .hero-promo .acoes .btn-link{padding-left:0}
+  .fatos-promo{grid-template-columns:1fr}
+  .fatos-promo li,.fatos-promo li+li{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;padding:14px 0 0;border-left:0}
+  .fatos-promo li+li{border-top:1px solid rgba(255,255,255,.1);margin-top:14px}
+  .fatos-promo b{font-size:19px;white-space:nowrap}
+  .preco .por{font-size:58px}
+  .fatos-promo span{margin-top:0;font-size:14.5px}
+  .preco .economia b{font-size:16px}
+  .preco .economia span{font-size:16px}
+  .cond-grade{grid-template-columns:1fr}
+  .cond b{font-size:28px}
+  .bonent-box{grid-template-columns:1fr;gap:18px;padding:20px}
+  .bonent-box .ft{aspect-ratio:16/9}
 }
 @media (max-width:420px){
   .flags-topo{display:none}
@@ -335,6 +426,7 @@ footer details p{margin-top:10px;max-width:90ch}
       <span class="flags flags-topo" aria-label="Atendimento em português, aulas em inglês com professor brasileiro"><img src="assets/flag-br.svg" alt=""><img src="assets/flag-us.svg" alt=""></span>
     </a>
     <nav class="menu" aria-label="Seções">
+      <a class="promo" href="#promocao">Promoção</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#cursos">Cursos</a>
       <a href="#clinicas">Clínicas</a>
@@ -352,7 +444,38 @@ footer details p{margin-top:10px;max-width:90ch}
 
 <main id="inicio">
 
-<section class="hero" style="padding:0">
+<!-- promo: abertura da condição especial de fim de ano (some sozinha em 1º/1/2027) -->
+<section class="hero-promo promo" style="padding:0" aria-label="Condição especial de fim de ano">
+  <div class="foto" role="img" aria-label="Laboratório da Vanguard em Lauderhill, com máquina de hemodiálise e manequim de simulação"></div>
+  <div class="wrap">
+    <div class="conteudo">
+      <p class="selos"><span class="selo-oferta">Condição especial de fim de ano</span><span class="selo-prazo">Até 31/12/2026</span></p>
+      <h1>Seja Técnico em Hemodiálise <em>nos Estados Unidos</em></h1>
+      <div class="preco">
+        <p class="regular">Valor regular do curso: US$&nbsp;4.750</p>
+        <p class="por"><small>Por</small>US$&nbsp;2.500</p>
+        <p class="economia"><b>Economize US$&nbsp;2.250</b><span>ou 2 parcelas de US$&nbsp;1.250</span></p>
+      </div>
+      <ul class="fatos-promo">
+        <li><b>10 semanas</b><span>Formação intensiva nesta turma. Tempo regular: 4&nbsp;meses.</span></li>
+        <li><b>2&nbsp;x US$&nbsp;1.250</b><span>Uma no início do curso e outra 5&nbsp;semanas antes da conclusão.</span></li>
+        <li><b>US$&nbsp;260</b><span>de desconto no pacote BONENT ao indicar um amigo que se matricule.</span></li>
+      </ul>
+      <div class="acoes">
+        <a class="btn btn-wa js-wa" href="#contato" data-msg="Olá! Quero saber da condição especial do curso de Técnico em Hemodiálise por US$&nbsp;2.500.">
+          <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Quero essa condição
+        </a>
+        <a class="btn btn-link" href="#promocao">Ver todas as condições</a>
+      </div>
+      <p class="contagem" id="contagem">Condição válida até 31/12/2026.</p>
+      <p class="idioma"><span><img src="assets/flag-us.svg" alt="">Aulas em inglês com professor brasileiro</span><span><img src="assets/flag-br.svg" alt="">Atendimento em português</span></p>
+    </div>
+  </div>
+</section>
+<!-- fim promo -->
+
+<section class="hero so-normal" style="padding:0">
   <div class="foto" role="img" aria-label="Recepção da Vanguard School of Professional Health em Lauderhill, com o nome da escola no balcão"></div>
   <div class="wrap">
     <div class="conteudo">
@@ -378,6 +501,38 @@ footer details p{margin-top:10px;max-width:90ch}
     <li><strong>Fundada em 2016 em Lauderhill</strong><small>7100 W Commercial Blvd, Suite 101</small></li>
   </ul>
 </div>
+
+<!-- promo: condições da turma de fim de ano -->
+<section class="condicoes promo" id="promocao">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="eyebrow">Condição especial até 31/12/2026</span>
+      <h2>As condições da nova turma</h2>
+      <p class="lead">Tudo o que vale para quem se matricular nesta turma, por escrito, para você decidir com calma.</p>
+    </div>
+    <div class="cond-grade revela">
+      <article class="cond escuro"><span class="rot">Preço</span><b>US$&nbsp;2.500</b><p>Valor regular do curso: US$&nbsp;4.750. Você economiza US$&nbsp;2.250.</p></article>
+      <article class="cond"><span class="rot">Pagamento</span><b>2&nbsp;x US$&nbsp;1.250</b><p>A primeira parcela no início do curso e a segunda, cinco semanas antes da conclusão.</p></article>
+      <article class="cond"><span class="rot">Duração</span><b>10 semanas</b><p>Formação intensiva, só nesta turma. No ritmo regular, o curso leva 4&nbsp;meses.</p></article>
+      <article class="cond"><span class="rot">Indicação</span><b>US$&nbsp;260</b><p>de desconto no pacote BONENT para quem indicar um amigo que se matricule na turma.</p></article>
+    </div>
+    <div class="bonent-box revela">
+      <div class="ft"><img src="assets/real-entrada-bonent.jpg" alt="Entrada da Vanguard com o selo BONENT Approved Training Program na vitrine" loading="lazy"></div>
+      <div>
+        <h3>O que é o BONENT?</h3>
+        <p>É a entidade que aplica uma das provas nacionais de certificação para técnicos de hemodiálise. Pela regra federal, o técnico que atende pacientes numa clínica de diálise precisa se certificar em até 18&nbsp;meses depois de contratado, e a certificação do BONENT é uma das opções aceitas. A Vanguard é um programa aprovado pelo BONENT e prepara você para a prova.</p>
+      </div>
+    </div>
+    <div class="cond-rodape revela">
+      <a class="btn btn-wa js-wa" href="#contato" data-msg="Olá! Quero me matricular na turma com a condição especial de US$&nbsp;2.500.">
+        <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Quero garantir essa condição
+      </a>
+      <p class="letras">Condição válida até 31/12/2026 para todos os alunos que se matricularem nesta turma, conforme a política de descontos da escola. O desconto por indicação vale quando o amigo indicado se matricula. Valores em dólares americanos.</p>
+    </div>
+  </div>
+</section>
+<!-- fim promo -->
 
 <section id="como-funciona">
   <div class="wrap">
@@ -655,7 +810,15 @@ var WHATSAPP = "19543947482";
     }
   });
 
-  var flut = document.querySelector(".wa-flutuante"), hero = document.querySelector(".hero");
+  // promo: contagem real até 31/12/2026 (só aparece enquanto a promoção está no ar)
+  var promoOn = document.documentElement.className.indexOf("promo-on") > -1;
+  var cont = document.getElementById("contagem");
+  if (promoOn && cont) {
+    var dias = Math.ceil((PROMO_FIM - Date.now()) / 86400000);
+    cont.innerHTML = dias > 1 ? "Faltam <b>" + dias + " dias</b> para o fim desta condição." : "<b>Último dia</b> desta condição.";
+  }
+
+  var flut = document.querySelector(".wa-flutuante"), hero = document.querySelector(promoOn ? ".hero-promo" : ".hero");
   if (flut && hero && "IntersectionObserver" in window) {
     new IntersectionObserver(function(en){ flut.classList.toggle("oculto", en[0].isIntersecting); }, {threshold:0}).observe(hero);
   } else if (flut) { flut.classList.remove("oculto"); }
