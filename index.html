@@ -99,39 +99,34 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
 :root{--preto:#06080F;--ouro:#FFC83D;--cinza-promo:#AEB9CC}
 .promo{display:none}
 .promo-on .promo{display:block}
-.promo-on .so-normal{display:none}
 .promo-on .menu a.promo{display:inline-flex}
 .menu a.promo{align-items:center;background:var(--preto);color:var(--ouro);padding:5px 14px;border-radius:999px;margin:-5px 0}
 .menu a.promo:hover{color:#fff}
-.hero-promo{position:relative;background:var(--preto);color:#DCE6F5;overflow:hidden}
-.hero-promo .foto{position:absolute;inset:0 0 0 44%;background:url(assets/real-lab-simulacao.jpg) 35% center/cover no-repeat}
-.hero-promo .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--preto) 0%,rgba(6,8,15,.92) 16%,rgba(6,8,15,.58) 50%,rgba(6,8,15,.4) 100%)}
-.hero-promo .wrap{position:relative;padding-top:60px;padding-bottom:68px}
-.hero-promo .conteudo{max-width:720px}
-.selos{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.selo-oferta{background:var(--ouro);color:var(--preto);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
-.selo-prazo{background:rgba(255,200,61,.14);color:var(--ouro);font-weight:700;font-size:15px;padding:7px 16px;border-radius:999px}
-.hero-promo h1{color:#fff;font-size:clamp(32px,3.6vw,48px);font-weight:800;margin-top:22px}
-.hero-promo h1 em{font-style:normal;color:#8FB8F0}
-.preco{margin-top:24px}
-.preco .regular{font-size:18px;font-weight:600;color:var(--cinza-promo)}
-.preco .por{font-family:var(--display);font-weight:800;color:#fff;font-size:clamp(68px,8.4vw,108px);line-height:1;letter-spacing:-.03em;margin-top:4px;white-space:nowrap}
-.preco .por small{font-size:.3em;font-weight:700;color:var(--cinza-promo);letter-spacing:0;margin-right:.25em;vertical-align:.95em}
-.preco .economia{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:16px}
-.preco .economia b{background:var(--ouro);color:var(--preto);font-weight:800;font-size:18px;padding:6px 14px;border-radius:8px}
-.preco .economia span{font-size:17px;color:#DCE6F5;font-weight:600}
-.fatos-promo{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid rgba(255,255,255,.16)}
-.fatos-promo li{padding:18px 18px 0 0}
-.fatos-promo li+li{padding-left:18px;border-left:1px solid rgba(255,255,255,.16)}
-.fatos-promo b{display:block;font-family:var(--display);font-size:24px;font-weight:700;color:#fff;line-height:1.1}
-.fatos-promo span{display:block;font-size:15px;color:var(--cinza-promo);line-height:1.4;margin-top:6px}
-.hero-promo .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.hero-promo .btn-link{color:#fff}
-.contagem{margin-top:14px;font-size:15px;color:var(--cinza-promo)}
-.contagem b{color:var(--ouro);font-size:17px}
-.hero-promo .idioma{margin-top:22px;font-weight:600;font-size:16px;color:#DCE6F5;display:flex;flex-wrap:wrap;gap:6px 18px}
-.hero-promo .idioma span{display:inline-flex;align-items:center;gap:8px}
-.hero-promo .idioma img{width:24px;height:16px;border-radius:2px}
+.banner-promo{position:relative;background:linear-gradient(100deg,var(--preto) 0%,var(--preto) 52%,#0D1B3E 100%);color:#DCE6F5;overflow:hidden;border-bottom:3px solid var(--ouro)}
+.banner-promo::before{content:"";position:absolute;inset:0 0 0 58%;background:url(assets/real-lab-simulacao.jpg) 30% center/cover no-repeat;opacity:.22;-webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);mask-image:linear-gradient(90deg,transparent,#000 55%)}
+.banner-promo .wrap{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 48px;align-items:center;padding-top:26px;padding-bottom:30px}
+.banner-promo .selos{grid-column:1/-1}
+.selos{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.selo-oferta{background:var(--ouro);color:var(--preto);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+.selo-prazo{background:rgba(255,200,61,.14);color:var(--ouro);font-weight:700;font-size:14px;padding:6px 14px;border-radius:999px}
+.bp-curso{font-family:var(--display);font-weight:700;color:#fff;font-size:22px;line-height:1.2}
+.bp-regular{font-size:16px;font-weight:600;color:var(--cinza-promo);margin-top:6px}
+.bp-por{font-family:var(--display);font-weight:800;color:#fff;font-size:76px;line-height:1;letter-spacing:-.03em;white-space:nowrap;margin-top:2px}
+.bp-por small{font-size:.3em;font-weight:700;color:var(--cinza-promo);letter-spacing:0;margin-right:.25em;vertical-align:.95em}
+.bp-fatos{list-style:none;display:grid;gap:14px}
+.bp-fatos li{display:flex;flex-direction:column;gap:2px}
+.bp-fatos .economia{background:var(--ouro);color:var(--preto);font-family:var(--body);font-weight:800;font-size:18px;padding:6px 14px;border-radius:8px;width:fit-content}
+.bp-fatos b{font-family:var(--display);font-weight:700;color:#fff;font-size:19px;line-height:1.25}
+.bp-fatos span{font-size:14.5px;color:var(--cinza-promo);line-height:1.35}
+.bp-acoes{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.bp-ver{color:#fff;font-weight:700;font-size:15px;text-underline-offset:4px}
+.bp-ver:hover{color:var(--ouro)}
+.banner-promo .contagem{font-size:14px;color:var(--cinza-promo)}
+.banner-promo .contagem b{color:var(--ouro);font-size:16px}
+@media (max-width:1180px){
+  .banner-promo .wrap{grid-template-columns:auto 1fr;gap:20px 48px}
+  .bp-acoes{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px 24px}
+}
 .condicoes{background:var(--creme)}
 .cond-grade{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .cond{background:#fff;border-radius:var(--raio);padding:28px 24px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(13,27,62,.06)}
@@ -316,12 +311,7 @@ footer details p{margin-top:10px;max-width:90ch}
 
 /* Movimento suave na entrada (sempre visível) */
 @media (prefers-reduced-motion:no-preference){
-  .hero .conteudo>*,.hero-promo .conteudo>*{animation:sobe .7s ease both}
-  .hero-promo .conteudo>*:nth-child(2){animation-delay:.06s}
-  .hero-promo .conteudo>*:nth-child(3){animation-delay:.12s}
-  .hero-promo .conteudo>*:nth-child(4){animation-delay:.18s}
-  .hero-promo .conteudo>*:nth-child(5){animation-delay:.24s}
-  .hero-promo .foto{animation:zoom 1.6s ease both}
+  .hero .conteudo>*{animation:sobe .7s ease both}
   .hero .conteudo>*:nth-child(2){animation-delay:.08s}
   .hero .conteudo>*:nth-child(3){animation-delay:.16s}
   .hero .conteudo>*:nth-child(4){animation-delay:.24s}
@@ -360,9 +350,6 @@ footer details p{margin-top:10px;max-width:90ch}
   .hero .wrap{padding-top:32px;padding-bottom:64px}
   .hero .conteudo{max-width:640px}
   footer .wrap{grid-template-columns:1fr}
-  .hero-promo .foto{position:relative;inset:auto;height:220px;background-position:center 48%}
-  .hero-promo .foto::after{background:linear-gradient(180deg,rgba(6,8,15,.15) 0%,rgba(6,8,15,.35) 55%,var(--preto) 100%)}
-  .hero-promo .wrap{padding-top:4px;padding-bottom:56px}
   .cond-grade{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
@@ -387,22 +374,16 @@ footer details p{margin-top:10px;max-width:90ch}
   .topo .wrap{height:76px}
   .form .linha{grid-template-columns:1fr}
   .form{padding:24px}
-  .hero-promo .foto{height:170px}
-  .hero-promo .conteudo{display:flex;flex-direction:column}
-  .hero-promo .acoes{order:1;margin-top:26px}
-  .hero-promo .contagem{order:2}
-  .fatos-promo{order:3}
-  .hero-promo .idioma{order:4}
-  .hero-promo .acoes .btn-wa{width:100%;font-size:16px;padding:15px 16px}
-  .hero-promo .acoes .btn-link{padding-left:0}
-  .fatos-promo{grid-template-columns:1fr}
-  .fatos-promo li,.fatos-promo li+li{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;padding:14px 0 0;border-left:0}
-  .fatos-promo li+li{border-top:1px solid rgba(255,255,255,.1);margin-top:14px}
-  .fatos-promo b{font-size:19px;white-space:nowrap}
-  .preco .por{font-size:58px}
-  .fatos-promo span{margin-top:0;font-size:14.5px}
-  .preco .economia b{font-size:16px}
-  .preco .economia span{font-size:16px}
+  .banner-promo .wrap{grid-template-columns:1fr;gap:16px;padding-top:22px;padding-bottom:26px}
+  .banner-promo::before{inset:0;opacity:.1;-webkit-mask-image:none;mask-image:none}
+  .bp-curso{font-size:20px}
+  .bp-por{font-size:56px}
+  .bp-fatos{gap:10px}
+  .bp-fatos .economia{font-size:16px}
+  .bp-fatos b{font-size:17px}
+  .bp-acoes{flex-direction:column;align-items:stretch;gap:12px}
+  .bp-acoes .btn-wa{width:100%;font-size:16px;padding:15px 16px}
+  .bp-acoes .bp-ver,.bp-acoes .contagem{text-align:center}
   .cond-grade{grid-template-columns:1fr}
   .cond b{font-size:28px}
   .bonent-box{grid-template-columns:1fr;gap:18px;padding:20px}
@@ -444,38 +425,33 @@ footer details p{margin-top:10px;max-width:90ch}
 
 <main id="inicio">
 
-<!-- promo: abertura da condição especial de fim de ano (some sozinha em 1º/1/2027) -->
-<section class="hero-promo promo" style="padding:0" aria-label="Condição especial de fim de ano">
-  <div class="foto" role="img" aria-label="Laboratório da Vanguard em Lauderhill, com máquina de hemodiálise e manequim de simulação"></div>
+<!-- promo: banner da condição especial de fim de ano (some sozinho em 1º/1/2027) -->
+<section class="banner-promo promo" style="padding:0" aria-label="Condição especial de fim de ano">
   <div class="wrap">
-    <div class="conteudo">
-      <p class="selos"><span class="selo-oferta">Condição especial de fim de ano</span><span class="selo-prazo">Até 31/12/2026</span></p>
-      <h1>Seja Técnico em Hemodiálise <em>nos Estados Unidos</em></h1>
-      <div class="preco">
-        <p class="regular">Valor regular do curso: US$&nbsp;4.750</p>
-        <p class="por"><small>Por</small>US$&nbsp;2.500</p>
-        <p class="economia"><b>Economize US$&nbsp;2.250</b><span>ou 2 parcelas de US$&nbsp;1.250</span></p>
-      </div>
-      <ul class="fatos-promo">
-        <li><b>10 semanas</b><span>Formação intensiva nesta turma. Tempo regular: 4&nbsp;meses.</span></li>
-        <li><b>2&nbsp;x US$&nbsp;1.250</b><span>Uma no início do curso e outra 5&nbsp;semanas antes da conclusão.</span></li>
-        <li><b>US$&nbsp;260</b><span>de desconto no pacote BONENT ao indicar um amigo que se matricule.</span></li>
-      </ul>
-      <div class="acoes">
-        <a class="btn btn-wa js-wa" href="#contato" data-msg="Olá! Quero saber da condição especial do curso de Técnico em Hemodiálise por US$&nbsp;2.500.">
-          <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
-          Quero essa condição
-        </a>
-        <a class="btn btn-link" href="#promocao">Ver todas as condições</a>
-      </div>
-      <p class="contagem" id="contagem">Condição válida até 31/12/2026.</p>
-      <p class="idioma"><span><img src="assets/flag-us.svg" alt="">Aulas em inglês com professor brasileiro</span><span><img src="assets/flag-br.svg" alt="">Atendimento em português</span></p>
+    <p class="selos"><span class="selo-oferta">Condição especial de fim de ano</span><span class="selo-prazo">Matrículas até 31/12/2026</span></p>
+    <div class="bp-oferta">
+      <p class="bp-curso">Técnico em Hemodiálise</p>
+      <p class="bp-regular">Valor regular do curso: US$&nbsp;4.750</p>
+      <p class="bp-por"><small>Por</small>US$&nbsp;2.500</p>
+    </div>
+    <ul class="bp-fatos">
+      <li><b class="economia">Economize US$&nbsp;2.250</b></li>
+      <li><b>2 parcelas de US$&nbsp;1.250</b><span>uma no início do curso e outra 5&nbsp;semanas antes da conclusão</span></li>
+      <li><b>Formação em 10&nbsp;semanas</b><span>tempo regular: cerca de 30&nbsp;semanas em período integral</span></li>
+    </ul>
+    <div class="bp-acoes">
+      <a class="btn btn-wa js-wa" href="#contato" data-msg="Olá! Quero saber da condição especial do curso de Técnico em Hemodiálise por US$ 2.500.">
+        <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Quero essa condição
+      </a>
+      <a class="bp-ver" href="#promocao">Ver todas as condições</a>
+      <p class="contagem" id="contagem">Condição válida para matrículas até 31/12/2026.</p>
     </div>
   </div>
 </section>
 <!-- fim promo -->
 
-<section class="hero so-normal" style="padding:0">
+<section class="hero" style="padding:0">
   <div class="foto" role="img" aria-label="Recepção da Vanguard School of Professional Health em Lauderhill, com o nome da escola no balcão"></div>
   <div class="wrap">
     <div class="conteudo">
@@ -506,14 +482,14 @@ footer details p{margin-top:10px;max-width:90ch}
 <section class="condicoes promo" id="promocao">
   <div class="wrap">
     <div class="cab revela">
-      <span class="eyebrow">Condição especial até 31/12/2026</span>
+      <span class="eyebrow">Condição especial para matrículas até 31/12/2026</span>
       <h2>As condições da nova turma</h2>
       <p class="lead">Tudo o que vale para quem se matricular nesta turma, por escrito, para você decidir com calma.</p>
     </div>
     <div class="cond-grade revela">
       <article class="cond escuro"><span class="rot">Preço</span><b>US$&nbsp;2.500</b><p>Valor regular do curso: US$&nbsp;4.750. Você economiza US$&nbsp;2.250.</p></article>
       <article class="cond"><span class="rot">Pagamento</span><b>2&nbsp;x US$&nbsp;1.250</b><p>A primeira parcela no início do curso e a segunda, cinco semanas antes da conclusão.</p></article>
-      <article class="cond"><span class="rot">Duração</span><b>10 semanas</b><p>Formação intensiva, só nesta turma. No ritmo regular, o curso leva 4&nbsp;meses.</p></article>
+      <article class="cond"><span class="rot">Duração</span><b>10 semanas</b><p>Formação intensiva, só nesta turma. No ritmo regular, o curso leva cerca de 30&nbsp;semanas em período integral.</p></article>
       <article class="cond"><span class="rot">Indicação</span><b>US$&nbsp;260</b><p>de desconto no pacote BONENT para quem indicar um amigo que se matricule na turma.</p></article>
     </div>
     <div class="bonent-box revela">
@@ -528,7 +504,7 @@ footer details p{margin-top:10px;max-width:90ch}
         <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
         Quero garantir essa condição
       </a>
-      <p class="letras">Condição válida até 31/12/2026 para todos os alunos que se matricularem nesta turma, conforme a política de descontos da escola. O desconto por indicação vale quando o amigo indicado se matricula. Valores em dólares americanos.</p>
+      <p class="letras">Condição válida para matrículas feitas até 31/12/2026, igual para todos os alunos desta turma, conforme a política de descontos da escola. O desconto por indicação vale quando o amigo indicado se matricula. Valores em dólares americanos.</p>
     </div>
   </div>
 </section>
@@ -774,7 +750,7 @@ footer details p{margin-top:10px;max-width:90ch}
     </div>
     <div class="legal">
       <p>Contratação e patrocínio dependem da aprovação do empregador na entrevista e dos requisitos da lei.</p>
-      <p>Vanguard School of Professional Health, LLC. Licenciada pela Commission for Independent Education, Florida Department of Education, licença nº 5623. Informações adicionais sobre a instituição podem ser obtidas com a Commission for Independent Education, 325 W. Gaines Street, Suite 1414, Tallahassee, FL 32399-0400, telefone (888) 224-6684.</p>
+      <p>Vanguard School of Professional Health, LLC. Licensed by the Florida Commission for Independent Education, License No. 5623. Informações adicionais sobre a instituição podem ser obtidas com a Commission for Independent Education, 325 W. Gaines Street, Suite 1414, Tallahassee, FL 32399-0400, telefone (888) 224-6684.</p>
       <details id="privacidade"><summary>Política de privacidade</summary><p>Coletamos apenas os dados que você informa no formulário (nome, WhatsApp, e-mail, curso de interesse e país) para responder ao seu contato sobre os cursos. Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. Este site pode usar ferramentas de medição, como Google Analytics e Meta Pixel, para entender o uso das páginas e melhorar nossos anúncios. Para pedir a exclusão dos seus dados, fale conosco pelo WhatsApp.</p></details>
       <p>© 2026 Vanguard School of Professional Health. Todos os direitos reservados.</p>
     </div>
@@ -818,7 +794,7 @@ var WHATSAPP = "19543947482";
     cont.innerHTML = dias > 1 ? "Faltam <b>" + dias + " dias</b> para o fim desta condição." : "<b>Último dia</b> desta condição.";
   }
 
-  var flut = document.querySelector(".wa-flutuante"), hero = document.querySelector(promoOn ? ".hero-promo" : ".hero");
+  var flut = document.querySelector(".wa-flutuante"), hero = document.querySelector(".hero");
   if (flut && hero && "IntersectionObserver" in window) {
     new IntersectionObserver(function(en){ flut.classList.toggle("oculto", en[0].isIntersecting); }, {threshold:0}).observe(hero);
   } else if (flut) { flut.classList.remove("oculto"); }
