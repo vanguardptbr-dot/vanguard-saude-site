@@ -1,0 +1,4 @@
+# Endereços curtos dos QR codes do flyer (frente: /flyer; verso: /volante). Levam à seção da promoção.
+RewriteEngine On
+RewriteRule ^flyer/?$ /?utm_source=flyer#promocao [R=302,NE,L]
+RewriteRule ^volante/?$ /?utm_source=volante#promocao [R=302,NE,L]
